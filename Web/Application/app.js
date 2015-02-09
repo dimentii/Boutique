@@ -3,6 +3,7 @@
 var boutique = angular.module('boutique', [
     'ngRoute',
     'ngTouch',
+    'ngAnimate',
     'boutiqueControllers'    
 ]);
 

@@ -1,8 +1,62 @@
-﻿html, body {
+﻿html, body, .view-animate-container, .view-animate, .view-animate > div {
     height: 100%;
 }
 
-.full-page {
+.view-animate-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+    display: block;
     width: 100%;
     height: 100%;
+    position: absolute;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.view-animate.ng-leave {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* Slide Up */
+
+.view-animate.ng-enter.up {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+    .view-animate.ng-enter.ng-enter-active.up {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+.view-animate.ng-leave.ng-leave-active.up {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+/* Slide Down */
+
+.view-animate.ng-enter.down {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+
+    .view-animate.ng-enter.ng-enter-active.down {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+.view-animate.ng-leave.ng-leave-active.down {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
 }

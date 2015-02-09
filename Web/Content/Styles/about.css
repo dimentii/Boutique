@@ -1,4 +1,5 @@
 ﻿.about-bg {
-    height: 100%;
-    width: 100%;
+    background-image: url("../Images/Backgrounds/Huge/about.jpg");
+    background-position: center center;
+    background-size: cover;
 }

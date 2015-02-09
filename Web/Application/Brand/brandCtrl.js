@@ -4,11 +4,8 @@ boutiqueControllers.controller('BrandController', ['$scope', '$location',
     function ($scope, $location) {
         $scope.text = 'brand view';
 
-        $scope.swipeLeft = function () {
-            $location.url('/Index/About');
-        };
-
-        $scope.swipeUp = function () {
+        $scope.slideUp = function () {
+            $scope.$parent.direction = 'up';
             $location.url('/Index/About');
         };
     }

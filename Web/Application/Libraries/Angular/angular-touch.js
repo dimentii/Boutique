@@ -171,20 +171,6 @@ ngTouch.factory('$swipe', [function() {
           return;
         }
 
-        // todo[dd]: this does not let swipe up and down
-        /*
-        // One of totalX or totalY has exceeded the buffer, so decide on swipe vs. scroll.
-        if (totalY > totalX) {
-          // Allow native scrolling to take over.
-          active = false;
-          eventHandlers['cancel'] && eventHandlers['cancel'](event);
-          return;
-        } else {
-          // Prevent the browser from scrolling.
-          event.preventDefault();
-          eventHandlers['move'] && eventHandlers['move'](coords, event);
-        }
-        */
         event.preventDefault();
         eventHandlers['move'] && eventHandlers['move'](coords, event);
       });

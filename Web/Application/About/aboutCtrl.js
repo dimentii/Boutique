@@ -4,7 +4,8 @@ boutiqueControllers.controller('AboutController', ['$scope', '$location',
     function ($scope, $location) {
         $scope.text = 'about section';
 
-        $scope.swipeLeft = function ($event) {
+        $scope.swipeDown = function () {
+            $scope.$parent.direction = 'down';
             $location.url('/Index/Brand');
         };
     }
