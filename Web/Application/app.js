@@ -4,13 +4,16 @@ var boutique = angular.module('boutique', [
     'ngRoute',
     'ngTouch',
     'ngAnimate',
-    'boutiqueControllers'    
+    'boutiqueControllers',
+    'boutiqueServices'
 ]);
 
 var boutiqueControllers = angular.module('boutiqueControllers', []);
 
+var boutiqueServices = angular.module('boutiqueServices', []);
+
 boutique.config(['$routeProvider', '$locationProvider',
-    function ($routeProvider, $locationProvider, hammerDefaultOptsProvider) {
+    function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/Index/Brand', {
                 templateUrl: 'Application/Brand/brand.html',

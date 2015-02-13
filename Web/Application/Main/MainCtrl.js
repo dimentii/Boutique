@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 boutiqueControllers.controller('MainController', ['$scope',
-    function ($scope, $location) {
+    function ($scope) {
         $scope.direction = '';
     }
 ]);

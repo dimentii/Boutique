@@ -76,7 +76,10 @@
   <ItemGroup>
     <Content Include="Application\Brand\brand.html" />
     <Content Include="Application\Brand\brandCtrl.js" />
+    <Content Include="Application\Common\navigationSrvc.js" />
     <Content Include="Application\Common\scrollingDirective.js" />
+    <Content Include="Application\Common\Section\section.html" />
+    <Content Include="Application\Common\Section\sectionDirective.js" />
     <Content Include="Application\Common\swipeDownDirective.js" />
     <Content Include="Application\Common\swipeUpDirective.js" />
     <Content Include="Application\Libraries\Angular\angular-animate.js" />
