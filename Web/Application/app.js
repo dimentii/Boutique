@@ -23,6 +23,10 @@ boutique.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'Application/About/about.html',
                 controller: 'AboutController'
             })
+            .when('/Index/Services', {
+                templateUrl: 'Application/Services/familylook.html',
+                controller: 'FamilylookController'
+            })
             .otherwise({
                 redirectTo: '/Index/Brand'
             });

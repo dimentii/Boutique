@@ -9,16 +9,21 @@
         <title>Welcome</title>
 
         <link rel="stylesheet" href="Content/Styles/normalize.css" />
+        <link rel="stylesheet" href="Content/Styles/Bootstrap/bootstrap.min.css" />
         <link rel="stylesheet" href="Content/Styles/main.css" />
         <link rel="stylesheet" href="Content/Styles/about.css" />
         <link rel="stylesheet" href="Content/Styles/brand.css" />
+        <link rel="stylesheet" href="Content/Styles/familylook.css" />
 
         <script src="Application/Libraries/jQuery/jquery-2.1.3.min.js"></script>
+        <script src="Application/Libraries/Bootstrap/bootstrap.min.js"></script>
+        <!-- http://getbootstrap.com/customize/?id=717a588b4f3aefeda5e5 -->
 
         <!-- Angular JS -->
         <script src="Application/Libraries/Angular/angular.min.js"></script>
         <script src="Application/Libraries/Angular/angular-route.min.js"></script>
         <script src="Application/Libraries/Angular/angular-touch.min.js"></script>
+
         <script src="Application/Libraries/Angular/angular-animate.min.js"></script>
 
         <!-- DD -->        
@@ -30,14 +35,18 @@
         <script src="Application/Common/swipeDownDirective.js"></script>
         <script src="Application/Common/scrollingDirective.js"></script>
         <script src="Application/Common/Section/sectionDirective.js"></script>
+        <script src="Application/Common/Slide/slideDirective.js"></script>
+        <script src="Application/Common/Navigation/navbarDirective.js"></script>
         <!-- Controllers -->
         <script src="Application/Main/mainCtrl.js"></script>
         <script src="Application/About/aboutCtrl.js"></script>
         <script src="Application/Brand/brandCtrl.js"></script>
+        <script src="Application/Services/familylookCtrl.js"></script>
     
     </head>
     <body>
         <div ng-controller="MainController" class="view-animate-container">
+            <ng-navbar></ng-navbar>
             <div ng-view class="view-animate" ng-class="direction"></div>
         </div>
     </body>
