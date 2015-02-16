@@ -1,27 +1,28 @@
 ﻿'use strict';
 
-boutique.directive('ngSection', ['navigation', function (navigation) {
+boutique.directive('ngSection', ['navigation', '$compile', function (navigation, $compile) {
     return {
         restrict: 'A',
-        transclude: true,
-        replace: true,
-        templateUrl: '/Application/Common/Section/section.html',
-        controller: function ($scope) {
-            $scope.slideUp = function() {
-                $scope.$parent.direction = 'slide-up';
+        terminal: true,
+        priority: 1001,
+        link: function link(scope, element) {
+            element.attr('ng-swipe-up', 'swipeUp()');
+            element.attr('ng-swipe-down', 'swipeDown()');
+            element.attr('ng-scroll', 'scroll(direction)');
+            element.removeAttr("ng-section"); //remove the attribute to avoid indefinite loop
 
-                navigation.slideUp();
+            $compile(element)(scope);
+        },
+        controller: function ($scope) {
+            $scope.swipeUp = function() {
+                navigation.swipeUp();
             };
 
-            $scope.slideDown = function () {
-                $scope.$parent.direction = 'slide-down';
-
-                navigation.slideDown();
+            $scope.swipeDown = function () {
+                navigation.swipeDown();
             };
 
             $scope.scroll = function (direction) {
-                $scope.$parent.direction = direction;
-
                 navigation.scroll(direction);
             };
         }

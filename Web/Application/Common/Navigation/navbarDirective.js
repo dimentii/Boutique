@@ -10,8 +10,6 @@ boutique.directive('ngNavbar', ['navigation', function (navigation) {
             $scope.brandUrl = navigation.getBrandUrl();
 
             $scope.navigate = function (link) {
-                $scope.direction = navigation.getDirection(link);
-
                 navigation.navigateTo(link);
             };
         }

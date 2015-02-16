@@ -80,9 +80,7 @@
     <Content Include="Application\Common\Navigation\navbar.html" />
     <Content Include="Application\Common\Navigation\navbarDirective.js" />
     <Content Include="Application\Common\scrollingDirective.js" />
-    <Content Include="Application\Common\Section\section.html" />
     <Content Include="Application\Common\Section\sectionDirective.js" />
-    <Content Include="Application\Common\Slide\slide.html" />
     <Content Include="Application\Common\Slide\slideDirective.js" />
     <Content Include="Application\Common\swipeDownDirective.js" />
     <Content Include="Application\Common\swipeUpDirective.js" />

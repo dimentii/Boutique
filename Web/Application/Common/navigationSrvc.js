@@ -1,11 +1,11 @@
 ﻿'use strict';
 
-boutiqueServices.factory('navigation', ['$location',
-    function ($location) {
+boutiqueServices.factory('navigation', ['$location', '$rootScope',
+    function ($location, $rootScope) {
         var siteMap = ['/Index/Brand', '/Index/About', '/Index/Services'];
 
-        var slideUpDirection = 'slide-up';
-        var slideDownDirection = 'slide-down';
+        var swipeUpDirection = 'swipe-up';
+        var swipeDownDirection = 'swipe-down';
 
         function getMapIndex() {
             var currentLocation = $location.path();
@@ -15,13 +15,29 @@ boutiqueServices.factory('navigation', ['$location',
             return currentIndex;
         };
 
+        function getDirection(link) {
+            var currentIndex = getMapIndex();
+
+            var newIndex = siteMap.indexOf(link);
+
+            if (currentIndex === newIndex) {
+                return '';
+            }
+
+            return currentIndex > newIndex ? swipeDownDirection : swipeUpDirection;
+        };
+
         function changeLocationDown(index) {
+            $rootScope.$broadcast('direction:changed', { direction: swipeDownDirection });
+
             if (index > 0) {
                 $location.url(siteMap[index - 1]);
             }
         };
 
         function changeLocationUp(index) {
+            $rootScope.$broadcast('direction:changed', { direction: swipeUpDirection });
+
             if (index < (siteMap.length - 1)) {
                 $location.url(siteMap[index + 1]);
             }
@@ -38,58 +54,49 @@ boutiqueServices.factory('navigation', ['$location',
             return siteMap[0];
         };
 
-        function getDirection(link) {
-            var currentIndex = getMapIndex();
-
-            var newIndex = siteMap.indexOf(link);
-
-            if (currentIndex === newIndex) {
-                return '';
-            }
-
-            return currentIndex > newIndex ? slideDownDirection : slideUpDirection;
-        };
-
-        function slideUp() {
+        function swipeUp() {
             var currentIndex = getMapIndex();
 
             changeLocationUp(currentIndex);
         };
 
-        function slideDown() {
+        function swipeDown() {
             var currentIndex = getMapIndex();
 
             changeLocationDown(currentIndex);
         };
 
-        function slideLeft() {
+        function swipeLeft() {
             console.log('To the left');
         };
 
-        function slideRight() {
+        function swipeRight() {
             console.log('To the right');
         };
 
         function scroll(direction) {
             var currentIndex = getMapIndex();
 
-            direction === slideUpDirection ? changeLocationUp(currentIndex) : changeLocationDown(currentIndex);
+            direction === swipeUpDirection ? changeLocationUp(currentIndex) : changeLocationDown(currentIndex);
         };
 
         function navigateTo(link) {
+            var direction = getDirection(link);
+
+            $rootScope.$broadcast('direction:changed', { direction: direction });
+
             $location.url(link);
         };
 
         return {
-            slideUp: slideUp,
-            slideDown: slideDown,
-            scroll: scroll,
-            sections: sections,
-            getDirection: getDirection,
+            swipeUp: swipeUp,
+            swipeDown: swipeDown,
+            swipeLeft: swipeLeft,
+            swipeRight: swipeRight,
+            scroll: scroll,            
             navigateTo: navigateTo,
-            getBrandUrl: getBrandUrl,
-            slideLeft: slideLeft,
-            slideRight: slideRight
+            sections: sections,
+            getBrandUrl: getBrandUrl
         }
     }
 ]);

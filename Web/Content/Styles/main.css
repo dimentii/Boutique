@@ -29,34 +29,34 @@
 
 /* Slide Up */
 
-.view-animate.ng-enter.slide-up {
+.view-animate.ng-enter.swipe-up {
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
 }
 
-    .view-animate.ng-enter.ng-enter-active.slide-up {
+    .view-animate.ng-enter.ng-enter-active.swipe-up {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 
-.view-animate.ng-leave.ng-leave-active.slide-up {
+.view-animate.ng-leave.ng-leave-active.swipe-up {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
 }
 
 /* Slide Down */
 
-.view-animate.ng-enter.slide-down {
+.view-animate.ng-enter.swipe-down {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
 }
 
-    .view-animate.ng-enter.ng-enter-active.slide-down {
+    .view-animate.ng-enter.ng-enter-active.swipe-down {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
 
-.view-animate.ng-leave.ng-leave-active.slide-down {
+.view-animate.ng-leave.ng-leave-active.swipe-down {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
 }
