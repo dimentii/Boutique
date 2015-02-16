@@ -2,12 +2,12 @@
 
 boutique.directive('ngSection', ['navigation', function (navigation) {
     return {
-        restrict: 'E',
+        restrict: 'A',
+        transclude: true,
         replace: true,
         templateUrl: '/Application/Common/Section/section.html',
-        transclude: true,
         controller: function ($scope) {
-            $scope.slideUp = function () {
+            $scope.slideUp = function() {
                 $scope.$parent.direction = 'slide-up';
 
                 navigation.slideUp();

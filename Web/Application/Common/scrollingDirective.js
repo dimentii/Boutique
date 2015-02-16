@@ -6,7 +6,6 @@ boutique.directive('ngScroll', [function () {
         scope: {
             scroll: '&ngScroll'
         },
-        require: 'ngSection',
         link: function (scope, element) {
             element.on('mousewheel DOMMouseScroll', function (event) {
                 var direction = (event.originalEvent.wheelDelta || -event.originalEvent.detail) > 0 ? 'slide-down': 'slide-up';

@@ -10,7 +10,6 @@ boutique.directive('ngSwipeDown', ['$parse', '$swipe', function($parse, $swipe) 
 
     return {
         restrict: 'A',
-        require: 'ngSection',
         link: function(scope, element, attr) {
             var swipeHandler = $parse(attr['ngSwipeDown']);
 

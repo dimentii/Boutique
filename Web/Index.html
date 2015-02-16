@@ -23,7 +23,6 @@
         <script src="Application/Libraries/Angular/angular.min.js"></script>
         <script src="Application/Libraries/Angular/angular-route.min.js"></script>
         <script src="Application/Libraries/Angular/angular-touch.min.js"></script>
-
         <script src="Application/Libraries/Angular/angular-animate.min.js"></script>
 
         <!-- DD -->        
@@ -46,7 +45,7 @@
     </head>
     <body>
         <div ng-controller="MainController" class="view-animate-container">
-            <ng-navbar></ng-navbar>
+            <div ng-navbar></div>
             <div ng-view class="view-animate" ng-class="direction"></div>
         </div>
     </body>
