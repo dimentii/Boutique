@@ -1,0 +1,6 @@
+﻿.sizeplus-bg {
+    background-image: url("../Images/Backgrounds/Huge/sizeplus.jpg");
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+}

@@ -7,11 +7,17 @@ boutique.directive('ngNavbar', ['navigation', function (navigation) {
         controller: function ($scope) {
             $scope.sections = navigation.sections;
 
-            $scope.brandUrl = navigation.getBrandUrl();
+            $scope.navigateToBrand = function () {
+                navigation.navigateToBrand();
+            };
 
             $scope.navigate = function (link) {
                 navigation.navigateTo(link);
             };
+
+            $scope.$on('slide:changed', function (event, args) {
+                $scope.sections = args.sections;
+            });
         }
     }
 }]);

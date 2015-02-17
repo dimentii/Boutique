@@ -27,7 +27,7 @@
     transform: translate3d(0, 0, 0);
 }
 
-/* Slide Up */
+/* Swipe Up */
 
 .view-animate.ng-enter.swipe-up {
     -webkit-transform: translate3d(0, 100%, 0);
@@ -44,7 +44,7 @@
     transform: translateY(-100%);
 }
 
-/* Slide Down */
+/* Swipe Down */
 
 .view-animate.ng-enter.swipe-down {
     -webkit-transform: translate3d(0, -100%, 0);
@@ -59,4 +59,38 @@
 .view-animate.ng-leave.ng-leave-active.swipe-down {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
+}
+
+/* Swipe Left */
+
+.view-animate.ng-enter.swipe-left {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+
+    .view-animate.ng-enter.ng-enter-active.swipe-left {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+.view-animate.ng-leave.ng-leave-active.swipe-left {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+/* Swipe Right */
+
+.view-animate.ng-enter.swipe-right {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+
+    .view-animate.ng-enter.ng-enter-active.swipe-right {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+.view-animate.ng-leave.ng-leave-active.swipe-right {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
 }
