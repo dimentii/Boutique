@@ -39,11 +39,11 @@ boutique.directive('ngSwipeUp', ['$parse', '$swipe', function($parse, $swipe) {
                 pointerTypes.push('mouse');
             }
             $swipe.bind(element, {
-                'start': function(coords, event) {
+                'start': function(coords) {
                     startCoords = coords;
                     valid = true;
                 },
-                'cancel': function(event) {
+                'cancel': function() {
                     valid = false;
                 },
                 'end': function(coords, event) {

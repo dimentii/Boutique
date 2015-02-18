@@ -5,10 +5,19 @@ boutique.directive('ngNavbar', ['navigation', function (navigation) {
         restrict: 'A',
         templateUrl: '/Application/Common/Navigation/navbar.html',
         controller: function ($scope) {
-            $scope.sections = navigation.sections;
+            $scope.brand = {
+                name: 'Brand',
+                link: navigation.brandUrl
+            };
 
-            $scope.navigateToBrand = function () {
-                navigation.navigateToBrand();
+            $scope.about = {
+                name: 'About',
+                link: navigation.aboutUrl
+            };
+
+            $scope.services = {
+                name: 'Services',
+                link: navigation.defaultSlidesUrl
             };
 
             $scope.navigate = function (link) {
@@ -16,7 +25,7 @@ boutique.directive('ngNavbar', ['navigation', function (navigation) {
             };
 
             $scope.$on('slide:changed', function (event, args) {
-                $scope.sections = args.sections;
+                $scope.services['link'] = args.newLink;
             });
         }
     }
