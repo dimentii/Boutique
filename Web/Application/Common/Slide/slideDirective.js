@@ -4,12 +4,12 @@ boutique.directive('ngSlide', ['navigation', '$compile', function (navigation, $
     return {
         restrict: 'A',
         terminal: true,
-        priority: 1000,
+        priority: 100,
         link: function link(scope, element) {
             element.attr('ng-section', '');
             element.attr('ng-swipe-left', 'swipeLeft()');
             element.attr('ng-swipe-right', 'swipeRight()');
-            element.removeAttr("ng-slide"); //remove the attribute to avoid indefinite loop
+            element.removeAttr('ng-slide'); //remove the attribute to avoid indefinite loop
 
             $compile(element)(scope);
         },

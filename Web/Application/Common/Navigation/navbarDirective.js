@@ -4,6 +4,8 @@ boutique.directive('ngNavbar', ['navigation', function (navigation) {
     return {
         restrict: 'A',
         templateUrl: '/Application/Common/Navigation/navbar.html',
+        /* Use this when publish to IIS */ 
+        //templateUrl: '/Production/Application/Common/Navigation/navbar.html',
         controller: function ($scope) {
             $scope.brand = {
                 name: 'Brand',

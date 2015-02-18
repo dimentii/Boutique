@@ -105,6 +105,10 @@
     <Content Include="Content\Images\Backgrounds\Large\brand.jpg" />
     <Content Include="Content\Images\Backgrounds\Medium\about.jpg" />
     <Content Include="Content\Images\Backgrounds\Medium\brand.jpg" />
+    <Content Include="Content\Images\Tests\blue.png" />
+    <Content Include="Content\Images\Tests\green.png" />
+    <Content Include="Content\Images\Tests\red.png" />
+    <Content Include="Content\Images\Tests\white.png" />
     <Content Include="Content\Styles\about.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap.min.css" />
@@ -112,6 +116,7 @@
     <Content Include="Content\Styles\dress.css" />
     <Content Include="Content\Styles\familylook.css" />
     <Content Include="Content\Styles\main.css" />
+    <Content Include="Content\Styles\media.css" />
     <Content Include="Content\Styles\normalize.css" />
     <Content Include="Content\Styles\sizeplus.css" />
     <Content Include="Global.asax" />

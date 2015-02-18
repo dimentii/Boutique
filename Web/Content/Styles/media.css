@@ -1,0 +1,39 @@
+﻿@media only screen and (min-width: 768px) {
+    .about-bg {
+        background-image: url("../Images/Tests/green.png");
+    }
+
+    .brand-bg {
+        background-image: url("../Images/Tests/green.png");
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .about-bg {
+        background-image: url("../Images/Tests/blue.png");
+    }
+
+    .brand-bg {
+        background-image: url("../Images/Tests/blue.png");
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+   .about-bg {
+        background-image: url("../Images/Tests/red.png");
+    }
+
+    .brand-bg {
+        background-image: url("../Images/Tests/red.png");
+    }
+}
+
+@media only screen and (min-width : 1824px) {
+    .about-bg {
+        background-image: url("../Images/Tests/white.png");
+    }
+
+    .brand-bg {
+        background-image: url("../Images/Tests/white.png");
+    }
+}
