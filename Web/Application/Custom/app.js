@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var boutique = angular.module('boutique', [
+angular.module('boutique', [
     'ngRoute',
     'ngTouch',
     'ngAnimate',
@@ -8,31 +8,31 @@ var boutique = angular.module('boutique', [
     'boutiqueServices'
 ]);
 
-var boutiqueControllers = angular.module('boutiqueControllers', []);
+angular.module('boutiqueControllers', []);
 
-var boutiqueServices = angular.module('boutiqueServices', []);
+angular.module('boutiqueServices', []);
 
-boutique.config(['$routeProvider', '$locationProvider',
+angular.module('boutique').config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/Index/Brand', {
-                templateUrl: 'Application/Brand/brand.html',
+                templateUrl: 'Application/Custom/Brand/brand.html',
                 controller: 'BrandController'
             })
             .when('/Index/About', {
-                templateUrl: 'Application/About/about.html',
+                templateUrl: 'Application/Custom/About/about.html',
                 controller: 'AboutController'
             })
             .when('/Index/Services/Familylook', {
-                templateUrl: 'Application/Services/familylook.html',
+                templateUrl: 'Application/Custom/Services/familylook.html',
                 controller: 'FamilylookController'
             })
             .when('/Index/Services/Sizeplus', {
-                templateUrl: 'Application/Services/sizeplus.html',
+                templateUrl: 'Application/Custom/Services/sizeplus.html',
                 controller: 'SizeplusController'
             })
             .when('/Index/Services/Dress', {
-                templateUrl: 'Application/Services/dress.html',
+                templateUrl: 'Application/Custom/Services/dress.html',
                 controller: 'DressController'
             })
             .otherwise({

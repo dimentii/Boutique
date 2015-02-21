@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-boutique.directive('ngSlide', ['navigation', '$compile', function (navigation, $compile) {
+angular.module('boutique').directive('ngSlide', ['navigation', '$compile', function (navigation, $compile) {
     return {
         restrict: 'A',
         terminal: true,
@@ -13,7 +13,7 @@ boutique.directive('ngSlide', ['navigation', '$compile', function (navigation, $
 
             $compile(element)(scope);
         },
-        controller: function ($scope) {
+        controller: ['$scope', function ($scope) {
             $scope.swipeLeft = function () {
                 navigation.swipeLeft();
             };
@@ -21,6 +21,6 @@ boutique.directive('ngSlide', ['navigation', '$compile', function (navigation, $
             $scope.swipeRight = function () {
                 navigation.swipeRight();
             };
-        }
+        }]
     }
 }]);

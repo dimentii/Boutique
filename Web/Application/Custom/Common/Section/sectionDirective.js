@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-boutique.directive('ngSection', ['navigation', '$compile', function (navigation, $compile) {
+angular.module('boutique').directive('ngSection', ['navigation', '$compile', function (navigation, $compile) {
     return {
         restrict: 'A',
         terminal: true,
@@ -13,7 +13,7 @@ boutique.directive('ngSection', ['navigation', '$compile', function (navigation,
 
             $compile(element)(scope);
         },
-        controller: function ($scope) {
+        controller: ['$scope', function ($scope) {
             $scope.swipeUp = function() {
                 navigation.swipeUp();
             };
@@ -25,6 +25,6 @@ boutique.directive('ngSection', ['navigation', '$compile', function (navigation,
             $scope.scroll = function (direction) {
                 navigation.scroll(direction);
             };
-        }
+        }]
     }
 }]);

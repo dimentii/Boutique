@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-boutique.directive('ngSwipeDown', ['$parse', '$swipe', function($parse, $swipe) {
+angular.module('boutique').directive('ngSwipeDown', ['$parse', '$swipe', function ($parse, $swipe) {
     // The maximum horizontal delta for a swipe should be less than 75px.
     var MAX_HORIZONTAL_DISTANCE = 75;
     // Horizontal distance should not be more than a fraction of the vertical distance.

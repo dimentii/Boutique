@@ -1,12 +1,12 @@
 ﻿'use strict';
 
-boutique.directive('ngNavbar', ['navigation', function (navigation) {
+angular.module('boutique').directive('ngNavbar', ['navigation', function (navigation) {
     return {
         restrict: 'A',
-        templateUrl: '/Application/Common/Navigation/navbar.html',
+        templateUrl: '/Application/Custom/Common/Navigation/navbar.html',
         /* Use this when publish to IIS */ 
-        //templateUrl: '/Production/Application/Common/Navigation/navbar.html',
-        controller: function ($scope) {
+        //templateUrl: '/Production/Application/Custom/Common/Navigation/navbar.html',
+        controller: ['$scope', function ($scope) {
             $scope.brand = {
                 name: 'Brand',
                 link: navigation.brandUrl
@@ -29,6 +29,6 @@ boutique.directive('ngNavbar', ['navigation', function (navigation) {
             $scope.$on('slide:changed', function (event, args) {
                 $scope.services['link'] = args.newLink;
             });
-        }
+        }]
     }
 }]);

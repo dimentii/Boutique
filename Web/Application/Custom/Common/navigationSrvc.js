@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-boutiqueServices.factory('navigation', ['$location', '$rootScope',
+angular.module('boutiqueServices').factory('navigation', ['$location', '$rootScope',
     function ($location, $rootScope) {
         var brandUrl = '/Index/Brand';
         var aboutUrl = '/Index/About';

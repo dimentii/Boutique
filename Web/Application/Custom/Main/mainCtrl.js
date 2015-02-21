@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-boutiqueControllers.controller('MainController', ['$scope',
+angular.module('boutiqueControllers').controller('MainController', ['$scope',
     function ($scope) {
         $scope.direction = '';
 

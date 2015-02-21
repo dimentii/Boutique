@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-boutique.directive('ngScroll', [function () {
+angular.module('boutique').directive('ngScroll', [function () {
     return {
         restrict: 'A',
         scope: {

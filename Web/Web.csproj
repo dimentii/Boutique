@@ -74,27 +74,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Application\Brand\brand.html" />
-    <Content Include="Application\Brand\brandCtrl.js" />
-    <Content Include="Application\Common\navigationSrvc.js" />
-    <Content Include="Application\Common\Navigation\navbar.html" />
-    <Content Include="Application\Common\Navigation\navbarDirective.js" />
-    <Content Include="Application\Common\scrollingDirective.js" />
-    <Content Include="Application\Common\Section\sectionDirective.js" />
-    <Content Include="Application\Common\Slide\slideDirective.js" />
-    <Content Include="Application\Common\swipeDownDirective.js" />
-    <Content Include="Application\Common\swipeUpDirective.js" />
+    <Content Include="Application\Custom\Brand\brand.html" />
+    <Content Include="Application\Custom\Brand\brandCtrl.js" />
+    <Content Include="Application\Custom\Common\navigationSrvc.js" />
+    <Content Include="Application\Custom\Common\Navigation\navbar.html" />
+    <Content Include="Application\Custom\Common\Navigation\navbarDirective.js" />
+    <Content Include="Application\Custom\Common\scrollingDirective.js" />
+    <Content Include="Application\Custom\Common\Section\sectionDirective.js" />
+    <Content Include="Application\Custom\Common\Slide\slideDirective.js" />
+    <Content Include="Application\Custom\Common\swipeDownDirective.js" />
+    <Content Include="Application\Custom\Common\swipeUpDirective.js" />
     <Content Include="Application\Libraries\Angular\angular-animate.js" />
     <Content Include="Application\Libraries\Angular\angular-animate.min.js" />
     <Content Include="Application\Libraries\Bootstrap\bootstrap.js" />
     <Content Include="Application\Libraries\Bootstrap\bootstrap.min.js" />
-    <Content Include="Application\Main\mainCtrl.js" />
-    <Content Include="Application\Services\dress.html" />
-    <Content Include="Application\Services\dressCtrl.js" />
-    <Content Include="Application\Services\familylook.html" />
-    <Content Include="Application\Services\familylookCtrl.js" />
-    <Content Include="Application\Services\sizeplus.html" />
-    <Content Include="Application\Services\sizeplusCtrl.js" />
+    <Content Include="Application\Custom\Main\mainCtrl.js" />
+    <Content Include="Application\Custom\Services\dress.html" />
+    <Content Include="Application\Custom\Services\dressCtrl.js" />
+    <Content Include="Application\Custom\Services\familylook.html" />
+    <Content Include="Application\Custom\Services\familylookCtrl.js" />
+    <Content Include="Application\Custom\Services\sizeplus.html" />
+    <Content Include="Application\Custom\Services\sizeplusCtrl.js" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Images\Backgrounds\Huge\about.jpg" />
     <Content Include="Content\Images\Backgrounds\Huge\brand.jpg" />
@@ -121,9 +121,9 @@
     <Content Include="Content\Styles\sizeplus.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
-    <Content Include="Application\app.js" />
-    <Content Include="Application\About\about.html" />
-    <Content Include="Application\About\aboutCtrl.js" />
+    <Content Include="Application\Custom\app.js" />
+    <Content Include="Application\Custom\About\about.html" />
+    <Content Include="Application\Custom\About\aboutCtrl.js" />
     <Content Include="Application\Libraries\Angular\angular-route.min.js.map" />
     <Content Include="Application\Libraries\Angular\angular-touch.js" />
     <Content Include="Application\Libraries\Angular\angular-touch.min.js" />
@@ -163,6 +163,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Build\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
