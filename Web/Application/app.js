@@ -16,23 +16,23 @@ angular.module('boutique').config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/Index/Brand', {
-                templateUrl: 'Application/Custom/Brand/brand.html',
+                templateUrl: 'Application/Brand/brand.html',
                 controller: 'BrandController'
             })
             .when('/Index/About', {
-                templateUrl: 'Application/Custom/About/about.html',
+                templateUrl: 'Application/About/about.html',
                 controller: 'AboutController'
             })
             .when('/Index/Services/Familylook', {
-                templateUrl: 'Application/Custom/Services/familylook.html',
+                templateUrl: 'Application/Services/familylook.html',
                 controller: 'FamilylookController'
             })
             .when('/Index/Services/Sizeplus', {
-                templateUrl: 'Application/Custom/Services/sizeplus.html',
+                templateUrl: 'Application/Services/sizeplus.html',
                 controller: 'SizeplusController'
             })
             .when('/Index/Services/Dress', {
-                templateUrl: 'Application/Custom/Services/dress.html',
+                templateUrl: 'Application/Services/dress.html',
                 controller: 'DressController'
             })
             .otherwise({

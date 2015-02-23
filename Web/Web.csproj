@@ -74,27 +74,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Application\Custom\Brand\brand.html" />
-    <Content Include="Application\Custom\Brand\brandCtrl.js" />
-    <Content Include="Application\Custom\Common\navigationSrvc.js" />
-    <Content Include="Application\Custom\Common\Navigation\navbar.html" />
-    <Content Include="Application\Custom\Common\Navigation\navbarDirective.js" />
-    <Content Include="Application\Custom\Common\scrollingDirective.js" />
-    <Content Include="Application\Custom\Common\Section\sectionDirective.js" />
-    <Content Include="Application\Custom\Common\Slide\slideDirective.js" />
-    <Content Include="Application\Custom\Common\swipeDownDirective.js" />
-    <Content Include="Application\Custom\Common\swipeUpDirective.js" />
-    <Content Include="Application\Libraries\Angular\angular-animate.js" />
-    <Content Include="Application\Libraries\Angular\angular-animate.min.js" />
-    <Content Include="Application\Libraries\Bootstrap\bootstrap.js" />
-    <Content Include="Application\Libraries\Bootstrap\bootstrap.min.js" />
-    <Content Include="Application\Custom\Main\mainCtrl.js" />
-    <Content Include="Application\Custom\Services\dress.html" />
-    <Content Include="Application\Custom\Services\dressCtrl.js" />
-    <Content Include="Application\Custom\Services\familylook.html" />
-    <Content Include="Application\Custom\Services\familylookCtrl.js" />
-    <Content Include="Application\Custom\Services\sizeplus.html" />
-    <Content Include="Application\Custom\Services\sizeplusCtrl.js" />
+    <Content Include="Application\Brand\brand.html" />
+    <Content Include="Application\Brand\brandCtrl.js" />
+    <Content Include="Application\Common\navigationSrvc.js" />
+    <Content Include="Application\Common\Navigation\navbar.html" />
+    <Content Include="Application\Common\Navigation\navbarDirective.js" />
+    <Content Include="Application\Common\scrollingDirective.js" />
+    <Content Include="Application\Common\Section\sectionDirective.js" />
+    <Content Include="Application\Common\Slide\slideDirective.js" />
+    <Content Include="Application\Common\swipeDownDirective.js" />
+    <Content Include="Application\Common\swipeUpDirective.js" />
+    <Content Include="Application\Custom\angular-touch-custom.js" />
+    <Content Include="Application\Main\mainCtrl.js" />
+    <Content Include="Application\Services\dress.html" />
+    <Content Include="Application\Services\dressCtrl.js" />
+    <Content Include="Application\Services\familylook.html" />
+    <Content Include="Application\Services\familylookCtrl.js" />
+    <Content Include="Application\Services\sizeplus.html" />
+    <Content Include="Application\Services\sizeplusCtrl.js" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Images\Backgrounds\Huge\about.jpg" />
     <Content Include="Content\Images\Backgrounds\Huge\brand.jpg" />
@@ -110,41 +107,25 @@
     <Content Include="Content\Images\Tests\red.png" />
     <Content Include="Content\Images\Tests\white.png" />
     <Content Include="Content\Styles\about.css" />
-    <Content Include="Content\Styles\Bootstrap\bootstrap.css" />
-    <Content Include="Content\Styles\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Styles\brand.css" />
     <Content Include="Content\Styles\dress.css" />
     <Content Include="Content\Styles\familylook.css" />
     <Content Include="Content\Styles\main.css" />
     <Content Include="Content\Styles\media.css" />
-    <Content Include="Content\Styles\normalize.css" />
     <Content Include="Content\Styles\sizeplus.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
-    <Content Include="Application\Custom\app.js" />
-    <Content Include="Application\Custom\About\about.html" />
-    <Content Include="Application\Custom\About\aboutCtrl.js" />
-    <Content Include="Application\Libraries\Angular\angular-route.min.js.map" />
-    <Content Include="Application\Libraries\Angular\angular-touch.js" />
-    <Content Include="Application\Libraries\Angular\angular-touch.min.js" />
-    <Content Include="Application\Libraries\Angular\angular.min.js.map" />
-    <Content Include="Application\Libraries\Angular\angular-animate.min.js.map" />
+    <Content Include="Application\app.js" />
+    <Content Include="Application\About\about.html" />
+    <Content Include="Application\About\aboutCtrl.js" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Application\Libraries\Bootstrap\bootstrap.config.json" />
+    <Content Include="Content\Styles\Bootstrap\variables.less" />
+    <Content Include="Content\Styles\Bootstrap\base.less" />
     <None Include="Properties\PublishProfiles\Dimentii.Dy.pubxml" />
-    <Content Include="Application\Libraries\Angular\angular-touch.min.js.map" />
-    <None Include="Application\Libraries\jQuery\jquery-2.1.3.intellisense.js" />
-    <Content Include="Application\Libraries\Angular\angular-route.js" />
-    <Content Include="Application\Libraries\Angular\angular-route.min.js" />
-    <Content Include="Application\Libraries\Angular\angular.js" />
-    <Content Include="Application\Libraries\Angular\angular.min.js" />
-    <Content Include="Application\Libraries\jQuery\jquery-2.1.3.js" />
-    <Content Include="Application\Libraries\jQuery\jquery-2.1.3.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Application\Libraries\jQuery\jquery-2.1.3.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -200,6 +181,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>CD $(SolutionDir)tools\
+$(SolutionDir)tools\build_app.bat</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

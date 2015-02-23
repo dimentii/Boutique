@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.12
+ * @license AngularJS v1.3.13
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -171,8 +171,12 @@ ngTouch.factory('$swipe', [function() {
           return;
         }
 
+        // Customization was there since website will not support scrolling we will not prevent swiping vertically
+
+        // Prevent the browser from scrolling.
         event.preventDefault();
         eventHandlers['move'] && eventHandlers['move'](coords, event);
+        
       });
 
       element.on(getEvents(pointerTypes, 'end'), function(event) {
