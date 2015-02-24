@@ -3,7 +3,7 @@
 angular.module('boutique').directive('ngNavbar', ['navigation', function (navigation) {
     return {
         restrict: 'A',
-        templateUrl: '/Application/Common/Navigation/navbar.html',
+        templateUrl: '/app/common/navigation/navbar.html',
         /* Use this when publish to IIS */ 
         //templateUrl: '/Production/Application/Common/Navigation/navbar.html',
         controller: ['$scope', function ($scope) {
