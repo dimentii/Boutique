@@ -35,23 +35,9 @@ module.exports = function(grunt) {
                     },
 					{
 						expand: true,
-						cwd: 'app/brand',
+						cwd: 'app/views',
 						src: ['**/*.js'],
-						dest: 'app_build/js/brand',
-						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/common',
-						src: ['**/*.js'],
-						dest: 'app_build/js/common',
-						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/custom',
-						src: ['**/*.js'],
-						dest: 'app_build/js/custom',
+						dest: 'app_build/js/views',
 						ext: '.js'
 					},
 					{
@@ -60,37 +46,22 @@ module.exports = function(grunt) {
 						src: ['**/*.js'],
 						dest: 'app_build/js/main',
 						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/services',
-						src: ['**/*.js'],
-						dest: 'app_build/js/services',
-						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/bower_components',
-						src: ['angular*/*.js'],
-						dest: 'app_build/js/bower_components/angular',
-						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/bower_components/bootstrap/dist/js',
-						src: ['*.js'],
-						dest: 'app_build/js/bower_components/bootstrap',
-						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/bower_components/jquery/dist',
-						src: ['**/*.js'],
-						dest: 'app_build/js/bower_components/jquery',
-						ext: '.js'
 					}
 		        ]
 		    }
+		},
+
+		copy: {
+			components: {
+				files: [
+					{
+						expand: true,
+						src: ['path/*'],
+						dest: 'dest/',
+						filter: 'isFile'
+					}
+				]
+			}
 		},
 
 		uglify: {
@@ -181,10 +152,11 @@ module.exports = function(grunt) {
 	});
 	
 	grunt.registerTask('default', ['build']);
-	grunt.registerTask('build', ['clean', 'less', 'ngAnnotate', 'uglify', 'cssmin', 'concat']);
+	grunt.registerTask('build', ['clean', 'less', 'ngAnnotate', 'copy', 'uglify', 'cssmin', 'concat']);
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-ng-annotate');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');

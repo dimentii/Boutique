@@ -183,11 +183,11 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 # Grunt
-frontend/app_build/
-frontend/dist/
+app_build/
+dist/
 
 # Bower
-bower_components/
+components/
 
 #WebStorm
 
