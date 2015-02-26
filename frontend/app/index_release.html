@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en" ng-app="boutique" ng-strict-di>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="/frontend/bin/release/">
+
+        <title>Welcome</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        
+        <script src="js/libs.min.js"></script>
+        <script src="js/source.min.js"></script>
+
+    </head>
+    <body>
+        <div ng-controller="MainController" class="view-animate-container">
+            <div ng-navbar></div>
+            <div ng-view class="view-animate" ng-class="direction"></div>
+        </div>
+    </body>
+</html>

@@ -124,6 +124,24 @@ module.exports = function(grunt) {
 						],
 						dest: 'bin/debug/images',
 						filter: 'isFile'
+					},
+					{
+						expand: true,
+						cwd: 'app/',
+						src: ['index.html'],
+						dest: 'bin/debug',
+						filter: 'isFile'
+					},
+					{
+						expand: true,
+						cwd: 'app',
+						src: [
+							'views/**/*.html',
+							'source/**/*.html'
+						],
+						dest: 'bin/debug/html',
+						flatten: true,
+						filter: 'isFile'
 					}
 				]
 			},
@@ -173,7 +191,13 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: 'bin/app_build/js',
-                        src: ['*.js', 'source/**/*.js', 'views/**/*.js', 'libs/transition.js', 'libs/collapse.js'],
+                        src: [
+							'*.js',
+							'source/**/*.js',
+							'views/**/*.js',
+							'libs/*.min.js',
+							'libs/*.js'
+						],
                         dest: 'bin/app_build/js',
                         ext: '.min.js'
                     }
@@ -205,7 +229,7 @@ module.exports = function(grunt) {
                     'bin/app_build/js/libs/angular-route.min.js',
                     'bin/app_build/js/libs/angular-animate.min.js'
 		        ],
-                dest: 'bin/release/js/app_libs.min.js'
+                dest: 'bin/release/js/libs.min.js'
 		    },
 		    source: {
 		        src: [
@@ -215,7 +239,7 @@ module.exports = function(grunt) {
                     'bin/app_build/js/**/*Directive.min.js',
                     'bin/app_build/js/**/*Ctrl.min.js'
 		        ],
-                dest: 'bin/release/js/app_build.min.js'
+                dest: 'bin/release/js/source.min.js'
 		    },
 		    styles: {
 		        options: {
@@ -237,24 +261,26 @@ module.exports = function(grunt) {
 		},
 
 		htmlmin: {
-			options: {
-				removeComments: true,
-				collapseWhitespace: true
-			},
-			files: {
-				'bin/release/html/navbar.html': 'app/source/navbar/navbar.html',
-				'bin/release/html/about.html': 'app/views/about/about.html',
-				'bin/release/html/brand.html': 'app/views/brand/brand.html',
-				'bin/release/html/dress.html': 'app/views/services/dress.html',
-				'bin/release/html/familylook.html': 'app/views/services/familylook.html',
-				'bin/release/html/sizeplus.html': 'app/views/services/sizeplus.html',
-				'bin/release/index.html': 'app/index/html'
+			release: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: {
+					'bin/release/html/navbar.html': 'app/source/navbar/navbar.html',
+					'bin/release/html/about.html': 'app/views/about/about.html',
+					'bin/release/html/brand.html': 'app/views/brand/brand.html',
+					'bin/release/html/dress.html': 'app/views/services/dress.html',
+					'bin/release/html/familylook.html': 'app/views/services/familylook.html',
+					'bin/release/html/sizeplus.html': 'app/views/services/sizeplus.html',
+					'bin/release/index.html': 'app/index_release.html'
+				}
 			}
 		}
 	});
 
 	grunt.registerTask('debug', ['clean:debug', 'less:debug', 'copy:debug']);
-	grunt.registerTask('release', ['clean:release', 'less:release', 'ngAnnotate', 'copy:release', 'uglify:release', 'cssmin:release', 'concat'])
+	grunt.registerTask('release', ['clean:release', 'less:release', 'ngAnnotate', 'copy:release', 'uglify:release', 'cssmin:release', 'concat', 'htmlmin:release'])
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-ng-annotate');
