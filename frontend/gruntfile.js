@@ -276,11 +276,23 @@ module.exports = function(grunt) {
 					'bin/release/index.html': 'app/index_release.html'
 				}
 			}
+		},
+
+		karma: {
+			options: {
+				// point all tasks to karma config file
+				configFile: 'karma.conf.js'
+			},
+			unit: {
+				// run tests once instead of continuously
+				singleRun: false
+			}
 		}
 	});
 
 	grunt.registerTask('debug', ['clean:debug', 'less:debug', 'copy:debug']);
-	grunt.registerTask('release', ['clean:release', 'less:release', 'ngAnnotate', 'copy:release', 'uglify:release', 'cssmin:release', 'concat', 'htmlmin:release'])
+	grunt.registerTask('release', ['clean:release', 'less:release', 'ngAnnotate', 'copy:release', 'uglify:release', 'cssmin:release', 'concat', 'htmlmin:release']);
+	grunt.registerTask('test', ['karma']);
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-ng-annotate');
@@ -290,4 +302,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	grunt.loadNpmTasks('grunt-karma');
 };
