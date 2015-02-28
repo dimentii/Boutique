@@ -2,6 +2,6 @@
 
 angular.module('boutiqueControllers').controller('AboutController', ['$scope',
     function ($scope) {
-        $scope.text = 'about section';
+        $scope.text = 'about view';
     }
 ]);

@@ -189,6 +189,9 @@ dist/
 # Bower
 components/
 
+# Karma
+test-results.xml
+
 #WebStorm
 
 *.iml

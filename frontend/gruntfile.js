@@ -39,29 +39,15 @@ module.exports = function(grunt) {
 		        singleQuotes: true,
 				flatten: true
 		    },
-		    all: {
+		    release: {
 		        files: [
                     {
                         expand: true,
-                        cwd: 'app',
-                        src: ['*.js'],
+                        cwd: 'app/source',
+                        src: ['**/*.js'],
                         dest: 'bin/app_build/js',
                         ext: '.js'
-                    },
-					{
-						expand: true,
-						cwd: 'app/views',
-						src: ['**/*.js'],
-						dest: 'bin/app_build/js/views',
-						ext: '.js'
-					},
-					{
-						expand: true,
-						cwd: 'app/source',
-						src: ['**/*.js'],
-						dest: 'bin/app_build/js/source',
-						ext: '.js'
-					}
+                    }
 		        ]
 		    }
 		},
@@ -86,11 +72,9 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'app/',
+						cwd: 'app/source',
 						src: [
-							'app.js',
-							'source/**/*.js',
-							'views/**/*.js',
+							'**/*.js'
 						],
 						dest: 'bin/debug/js',
 						flatten: true,
@@ -127,17 +111,17 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'app/',
+						cwd: 'app/source',
 						src: ['index.html'],
 						dest: 'bin/debug',
 						filter: 'isFile'
 					},
 					{
 						expand: true,
-						cwd: 'app',
+						cwd: 'app/source',
 						src: [
 							'views/**/*.html',
-							'source/**/*.html'
+							'features/**/*.html'
 						],
 						dest: 'bin/debug/html',
 						flatten: true,
@@ -193,7 +177,7 @@ module.exports = function(grunt) {
                         cwd: 'bin/app_build/js',
                         src: [
 							'*.js',
-							'source/**/*.js',
+							'features/**/*.js',
 							'views/**/*.js',
 							'libs/*.min.js',
 							'libs/*.js'
@@ -233,7 +217,7 @@ module.exports = function(grunt) {
 		    },
 		    source: {
 		        src: [
-                    'bin/app_build/js/source/navigation/angular-touch-custom.min.js',
+                    'bin/app_build/js/features/navigation/angular-touch-custom.min.js',
 					'bin/app_build/js/app.min.js',
                     'bin/app_build/js/**/*Srvc.min.js',
                     'bin/app_build/js/**/*Directive.min.js',
@@ -267,13 +251,13 @@ module.exports = function(grunt) {
 					collapseWhitespace: true
 				},
 				files: {
-					'bin/release/html/navbar.html': 'app/source/navbar/navbar.html',
-					'bin/release/html/about.html': 'app/views/about/about.html',
-					'bin/release/html/brand.html': 'app/views/brand/brand.html',
-					'bin/release/html/dress.html': 'app/views/services/dress.html',
-					'bin/release/html/familylook.html': 'app/views/services/familylook.html',
-					'bin/release/html/sizeplus.html': 'app/views/services/sizeplus.html',
-					'bin/release/index.html': 'app/index_release.html'
+					'bin/release/html/navbar.html': 'app/source/features/navbar/navbar.html',
+					'bin/release/html/about.html': 'app/source/views/about/about.html',
+					'bin/release/html/brand.html': 'app/source/views/brand/brand.html',
+					'bin/release/html/dress.html': 'app/source/views/services/dress.html',
+					'bin/release/html/familylook.html': 'app/source/views/services/familylook.html',
+					'bin/release/html/sizeplus.html': 'app/source/views/services/sizeplus.html',
+					'bin/release/index.html': 'app/source/index_release.html'
 				}
 			}
 		},
@@ -281,7 +265,7 @@ module.exports = function(grunt) {
 		karma: {
 			options: {
 				// point all tasks to karma config file
-				configFile: 'karma.conf.js'
+				configFile: 'test/karma.conf.js'
 			},
 			unit: {
 				// run tests once instead of continuously

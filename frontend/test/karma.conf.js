@@ -4,7 +4,7 @@
 module.exports = function(config) {
   config.set({
       // base path that will be used to resolve all patterns (eg. files, exclude)
-      basePath: 'app',
+      basePath: '../app',
 
 
       // frameworks to use
@@ -19,23 +19,18 @@ module.exports = function(config) {
           'components/bootstrap/js/collapse.js',
           'components/angular/angular.js',
           'components/angular-route/angular-route.js',
-          'source/navigation/angular-touch-custom.js',
+          'source/features/navigation/angular-touch-custom.js',
           'components/angular-animate/angular-animate.js',
+          'components/angular-mocks/angular-mocks.js',
 
-          'app.js',
-          'source/navigation/navigationSrvc.js',
-          'source/mainCtrl.js',
-          'source/navigation/scrollingDirective.js',
-          'source/navigation/swipeDownDirective.js',
-          'source/navigation/swipeUpDirective.js',
-          'source/navigation/sectionDirective.js',
-          'source/navigation/slideDirective.js',
-          'source/navbar/navbarDirective.js',
-          'views/about/aboutCtrl.js',
-          'views/brand/brandCtrl.js',
-          'views/services/dressCtrl.js',
-          'views/services/familylookCtrl.js',
-          'views/services/sizeplusCtrl.js'
+          'source/**/*.js',
+
+          '../test/unit/controllers/aboutCtrlSpec.js',
+          '../test/unit/controllers/brandCtrlSpec.js',
+          '../test/unit/controllers/dressCtrlSpec.js',
+          '../test/unit/controllers/familylookCtrlSpec.js',
+          '../test/unit/controllers/sizeplusCtrlSpec.js',
+          '../test/unit/controllers/mainCtrlSpec.js'
       ],
 
 
@@ -51,7 +46,7 @@ module.exports = function(config) {
       // test results reporter to use
       // possible values: 'dots', 'progress'
       // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-      reporters: ['progress'],
+      reporters: ['progress', 'junit'],
 
 
       // web server port
@@ -73,7 +68,7 @@ module.exports = function(config) {
 
       // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-      browsers: ['IE'],
+      browsers: ['Chrome'],
 
 
       captureTimeout: 10000,
@@ -81,6 +76,12 @@ module.exports = function(config) {
 
       // Continuous Integration mode
       // if true, Karma captures browsers, runs the tests and exits
-      singleRun: false
+      singleRun: false,
+
+      // the default configuration
+      junitReporter: {
+          outputFile: '../test/test-results.xml',
+          suite: ''
+      }
   });
 };
