@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-angular.module('boutique').directive('ngNavbar', ['navigation', function (navigation) {
+angular.module('boutique').directive('ngNavbar', ['navigation', 'location', function (navigation, location) {
     return {
         restrict: 'A',
         templateUrl: 'html/navbar.html',
@@ -9,17 +9,17 @@ angular.module('boutique').directive('ngNavbar', ['navigation', function (naviga
         controller: ['$scope', function ($scope) {
             $scope.brand = {
                 name: 'Brand',
-                link: navigation.brandUrl
+                link: location.brandUrl
             };
 
             $scope.about = {
                 name: 'About',
-                link: navigation.aboutUrl
+                link: location.aboutUrl
             };
 
             $scope.services = {
                 name: 'Services',
-                link: navigation.defaultSlidesUrl
+                link: location.defaultSlidesUrl
             };
 
             $scope.navigate = function (link) {

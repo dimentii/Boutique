@@ -12,7 +12,7 @@ describe('MainController', function(){
         $controllerConstructor = $controller;
     }));
 
-    it('Should has correct initial direction parameter and update it correctly', function() {
+    it('should has correct text', function() {
         var mockDirection = '';
         var newDirection = 'left';
         $controllerConstructor('MainController', {$scope: scope });

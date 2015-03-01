@@ -30,7 +30,9 @@ module.exports = function(config) {
           '../test/unit/controllers/dressCtrlSpec.js',
           '../test/unit/controllers/familylookCtrlSpec.js',
           '../test/unit/controllers/sizeplusCtrlSpec.js',
-          '../test/unit/controllers/mainCtrlSpec.js'
+          '../test/unit/controllers/mainCtrlSpec.js',
+
+          '../test/unit/services/navigationSrvcSpec.js'
       ],
 
 
@@ -78,10 +80,14 @@ module.exports = function(config) {
       // if true, Karma captures browsers, runs the tests and exits
       singleRun: false,
 
+
       // the default configuration
       junitReporter: {
           outputFile: '../test/test-results.xml',
           suite: ''
       }
+
+
+      // Plugins
   });
 };

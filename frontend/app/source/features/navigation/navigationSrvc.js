@@ -1,134 +1,39 @@
 ﻿'use strict';
 
-angular.module('boutiqueServices').factory('navigation', ['$location', '$rootScope',
-    function ($location, $rootScope) {
-        var brandUrl = '/Index/Brand';
-        var aboutUrl = '/Index/About';
-        var familylookUrl = '/Index/Services/Familylook';
-        var dressUrl = '/Index/Services/Dress';
-        var sizeplusUrl = '/Index/Services/Sizeplus';
-
-        var defaultSlidesUrl = familylookUrl;
-
-        var slidesMap = [familylookUrl, dressUrl, sizeplusUrl];
-        var siteMap = [brandUrl, aboutUrl, defaultSlidesUrl];
-
-        var slidesMapPosition = (function () {
-            for (var i = 0; i < slidesMap.length; i++) {
-                var position = siteMap.indexOf(slidesMap[i]);
-                if (position < 0) {
-                    continue;
-                }
-                return position;
-            }
-            return -1;
-        })();
-
-        var swipeUpDirection = 'swipe-up';
-        var swipeDownDirection = 'swipe-down';
-        var swipeLeftDirection = 'swipe-left';
-        var swipeRightDirection = 'swipe-right';
-
-        function getMapIndex() {
-            var currentLocation = $location.path();
-
-            return siteMap.indexOf(currentLocation);
-        }
-
-        function getSlideIndex() {
-            var currentSlide = $location.path();
-
-            return slidesMap.indexOf(currentSlide);
-        }
-
-        function getDirection(link) {
-            var currentIndex = getMapIndex();
-
-            var newIndex = siteMap.indexOf(link);
-
-            if (currentIndex === newIndex) {
-                return '';
-            }
-
-            return currentIndex > newIndex ? swipeDownDirection : swipeUpDirection;
-        }
-
-        function changeLocationDown(index) {
-            $rootScope.$broadcast('direction:changed', { direction: swipeDownDirection });
-
-            if (index > 0) {
-                $location.url(siteMap[index - 1]);
-            }
-        }
-
-        function changeLocationUp(index) {
-            $rootScope.$broadcast('direction:changed', { direction: swipeUpDirection });
-
-            if (index < (siteMap.length - 1)) {
-                $location.url(siteMap[index + 1]);
-            }
-        }
-
-        function changeLocationRight(index) {
-            $rootScope.$broadcast('direction:changed', { direction: swipeRightDirection });
-
-            var nextUrl = index === 0 ? slidesMap[slidesMap.length - 1] : slidesMap[--index];
-
-            siteMap[slidesMapPosition] = nextUrl;
-            $location.url(nextUrl);
-
-            $rootScope.$broadcast('slide:changed', { newLink: nextUrl });
-        }
-
-        function changeLocationLeft(index) {
-            $rootScope.$broadcast('direction:changed', { direction: swipeLeftDirection });
-
-            var nextUrl = index === (slidesMap.length - 1) ? slidesMap[0] : slidesMap[++index];
-
-            siteMap[slidesMapPosition] = nextUrl;
-            $location.url(nextUrl);
-
-            $rootScope.$broadcast('slide:changed', { newLink: nextUrl });
-        }
-
-        // public
-
+angular.module('boutiqueServices').factory('navigation', ['$rootScope', 'navigator',
+    function ($rootScope, navigator) {
         function swipeUp() {
-            var currentIndex = getMapIndex();
+            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeUpDirection });
 
-            changeLocationUp(currentIndex);
+            navigator.changeLocationUp();
         }
 
         function swipeDown() {
-            var currentIndex = getMapIndex();
+            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeDownDirection });
 
-            changeLocationDown(currentIndex);
+            navigator.changeLocationDown();
         }
 
         function swipeLeft() {
-            var currentSlideIndex = getSlideIndex();
+            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeLeftDirection });
 
-            changeLocationLeft(currentSlideIndex);
+            navigator.changeLocationLeft();
         }
 
         function swipeRight() {
-            var currentSlideIndex = getSlideIndex();
+            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeRightDirection });
 
-            changeLocationRight(currentSlideIndex);
+            navigator.changeLocationRight();
         }
 
         function scroll(direction) {
-            var currentIndex = getMapIndex();
+            $rootScope.$broadcast('direction:changed', { direction: direction });
 
-            direction === swipeUpDirection ? changeLocationUp(currentIndex) : changeLocationDown(currentIndex);
+            direction === navigator.swipeUpDirection ? navigator.changeLocationUp() : navigator.changeLocationDown();
         }
 
         function navigateTo(link) {
-            var direction = getDirection(link);
-
-            $rootScope.$broadcast('direction:changed', { direction: direction });
-
-            $location.url(link);
+            navigator.changeLocationTo(link);
         }
 
         return {
@@ -137,11 +42,7 @@ angular.module('boutiqueServices').factory('navigation', ['$location', '$rootSco
             swipeLeft: swipeLeft,
             swipeRight: swipeRight,
             scroll: scroll,            
-            navigateTo: navigateTo,
-
-            brandUrl: brandUrl,
-            aboutUrl: aboutUrl,
-            defaultSlidesUrl: defaultSlidesUrl
+            navigateTo: navigateTo
         }
     }
 ]);

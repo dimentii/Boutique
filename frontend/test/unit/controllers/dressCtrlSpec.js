@@ -11,7 +11,7 @@ describe('DressController', function() {
         $controllerConstructor = $controller;
     }));
 
-    it('Should has correct scope parameter text', function() {
+    it('should has correct text', function() {
         var mockText = 'dress service view';
         $controllerConstructor('DressController', {$scope: scope });
 
