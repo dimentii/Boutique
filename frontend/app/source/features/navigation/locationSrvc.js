@@ -24,14 +24,38 @@ angular.module('boutiqueServices').factory('location', [
             return -1;
         })();
 
-        return {
-            siteMap: siteMap,
-            slidesMap: slidesMap,
-            slidesMapPosition: slidesMapPosition,
+        var siteMapLength = siteMap.length;
+        var slidesMapLength = slidesMap.length;
 
-            brandUrl: brandUrl,
-            aboutUrl: aboutUrl,
-            defaultSlidesUrl: defaultSlidesUrl
+        function getSiteMapIndex(url) {
+            return siteMap.indexOf(url);
+        }
+
+        function getSiteMapUrl(index) {
+            return siteMap[index];
+        }
+
+        function updateSiteMapCurrentSlide(newUrl) {
+            siteMap[slidesMapPosition] = newUrl;
+        }
+
+        function getSlidesMapIndex(url) {
+            return slidesMap.indexOf(url);
+        }
+
+        function getSlidesMapUrl(index) {
+            return slidesMap[index];
+        }
+
+        return {
+            siteMapLength: siteMapLength,
+            slidesMapLength: slidesMapLength,
+
+            getSiteMapIndex: getSiteMapIndex,
+            getSiteMapUrl: getSiteMapUrl,
+            updateSiteMapCurrentSlide: updateSiteMapCurrentSlide,
+            getSlidesMapIndex: getSlidesMapIndex,
+            getSlidesMapUrl: getSlidesMapUrl
         }
     }
 ]);

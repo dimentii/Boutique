@@ -7,10 +7,11 @@ angular.module('boutiqueServices').factory('navigator', ['$rootScope', '$locatio
         var swipeLeftDirection = 'swipe-left';
         var swipeRightDirection = 'swipe-right';
 
-        function changeLocationUp () {
+        function changeLocationUp() {
             var currentLocation = $location.path();
             var upperLink = mapping.getUpperLink(currentLocation);
-            if(upperLink !== ''){
+            if(upperLink !== '') {
+                $rootScope.$broadcast('direction:changed', { direction: swipeUpDirection });
                 $location.url(upperLink);
             }
         }
@@ -18,18 +19,23 @@ angular.module('boutiqueServices').factory('navigator', ['$rootScope', '$locatio
         function changeLocationDown() {
             var currentLocation = $location.path();
             var downLink = mapping.getDownLink(currentLocation);
-            if(downLink !== ''){
+            if(downLink !== '') {
+                $rootScope.$broadcast('direction:changed', { direction: swipeDownDirection });
                 $location.url(downLink);
             }
         }
 
         function changeLocationLeft() {
+            $rootScope.$broadcast('direction:changed', { direction: swipeLeftDirection });
+
             var currentLocation = $location.path();
             var leftUrl = mapping.getLeftLink(currentLocation);
             $location.url(leftUrl);
         }
 
         function changeLocationRight() {
+            $rootScope.$broadcast('direction:changed', { direction: swipeRightDirection });
+
             var currentLocation = $location.path();
             var rightUrl = mapping.getRightLink(currentLocation);
             $location.url(rightUrl);

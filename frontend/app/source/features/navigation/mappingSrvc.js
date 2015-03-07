@@ -4,33 +4,31 @@ angular.module('boutiqueServices').factory('mapping', ['$rootScope', 'location',
     function($rootScope, location) {
 
         function getUpperLink(currentLocation) {
-            var siteMap = location.siteMap;
-            var currentIndex = siteMap.indexOf(currentLocation);
+            var currentIndex = location.getSiteMapIndex(currentLocation);
             var upperLink = '';
-            if (currentIndex < (siteMap.length - 1)) {
-                upperLink = siteMap[currentIndex + 1];
+            if (currentIndex < (location.siteMapLength - 1)) {
+                upperLink = location.getSiteMapUrl(currentIndex + 1);
             }
             return upperLink;
         }
 
         function getDownLink(currentLocation) {
-            var siteMap = location.siteMap;
-            var currentIndex = siteMap.indexOf(currentLocation);
+            var currentIndex = location.getSiteMapIndex(currentLocation);
             var downLink = '';
             if(currentIndex > 0){
-                downLink = siteMap[currentIndex - 1];
+                downLink = location.getSiteMapUrl(currentIndex - 1);
             }
             return downLink;
         }
 
         function getLeftLink(currentLocation) {
-            var slidesMap = location.slidesMap;
-            var siteMap = location.siteMap;
-            var slidesMapPosition = location.slidesMapPosition;
+            var currentIndex = location.getSlidesMapIndex(currentLocation);
 
-            var currentIndex = slidesMap.indexOf(currentLocation);
-            var nextUrl = currentIndex === (slidesMap.length - 1) ? slidesMap[0] : slidesMap[++currentIndex];
-            siteMap[slidesMapPosition] = nextUrl;
+            var nextIndex = currentIndex === (location.slidesMapLength - 1) ? 0 : ++currentIndex;
+
+            var nextUrl = location.getSlidesMapUrl(nextIndex);
+
+            location.updateSiteMapCurrentSlide(nextUrl);
 
             $rootScope.$broadcast('slide:changed', { newLink: nextUrl });
 
@@ -38,13 +36,13 @@ angular.module('boutiqueServices').factory('mapping', ['$rootScope', 'location',
         }
 
         function getRightLink(currentLocation) {
-            var slidesMap = location.slidesMap;
-            var siteMap = location.siteMap;
-            var slidesMapPosition = location.slidesMapPosition;
+            var currentIndex = location.getSlidesMapIndex(currentLocation);
 
-            var currentIndex = slidesMap.indexOf(currentLocation);
-            var nextUrl = currentIndex === 0 ? slidesMap[slidesMap.length - 1] : slidesMap[--currentIndex];
-            siteMap[slidesMapPosition] = nextUrl;
+            var nextIndex = currentIndex === 0 ? location.slidesMapLength - 1 : --currentIndex;
+
+            var nextUrl = location.getSlidesMapUrl(nextIndex);
+
+            location.updateSiteMapCurrentSlide(nextUrl);
 
             $rootScope.$broadcast('slide:changed', {newLink: nextUrl});
 
@@ -52,8 +50,7 @@ angular.module('boutiqueServices').factory('mapping', ['$rootScope', 'location',
         }
 
         function isMovingUp(currentLink, nextLink) {
-            var siteMap = location.siteMap;
-            return siteMap.indexOf(currentLink) > siteMap.indexOf(nextLink);
+            return location.getSiteMapIndex(currentLink) > location.getSiteMapIndex(nextLink);
         }
 
         return {

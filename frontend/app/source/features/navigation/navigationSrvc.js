@@ -1,34 +1,24 @@
 ﻿'use strict';
 
-angular.module('boutiqueServices').factory('navigation', ['$rootScope', 'navigator',
-    function ($rootScope, navigator) {
+angular.module('boutiqueServices').factory('navigation', ['navigator',
+    function (navigator) {
         function swipeUp() {
-            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeUpDirection });
-
             navigator.changeLocationUp();
         }
 
         function swipeDown() {
-            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeDownDirection });
-
             navigator.changeLocationDown();
         }
 
         function swipeLeft() {
-            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeLeftDirection });
-
             navigator.changeLocationLeft();
         }
 
         function swipeRight() {
-            $rootScope.$broadcast('direction:changed', { direction: navigator.swipeRightDirection });
-
             navigator.changeLocationRight();
         }
 
         function scroll(direction) {
-            $rootScope.$broadcast('direction:changed', { direction: direction });
-
             direction === navigator.swipeUpDirection ? navigator.changeLocationUp() : navigator.changeLocationDown();
         }
 
@@ -41,7 +31,7 @@ angular.module('boutiqueServices').factory('navigation', ['$rootScope', 'navigat
             swipeDown: swipeDown,
             swipeLeft: swipeLeft,
             swipeRight: swipeRight,
-            scroll: scroll,            
+            scroll: scroll,
             navigateTo: navigateTo
         }
     }

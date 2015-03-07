@@ -25,6 +25,8 @@ module.exports = function(config) {
 
           'source/**/*.js',
 
+          '../test/libs/sinon-1.12.2.js',
+
           '../test/unit/controllers/aboutCtrlSpec.js',
           '../test/unit/controllers/brandCtrlSpec.js',
           '../test/unit/controllers/dressCtrlSpec.js',
@@ -32,7 +34,9 @@ module.exports = function(config) {
           '../test/unit/controllers/sizeplusCtrlSpec.js',
           '../test/unit/controllers/mainCtrlSpec.js',
 
-          '../test/unit/services/navigationSrvcSpec.js'
+          '../test/unit/services/navigationSrvcSpec.js',
+          '../test/unit/services/navigatorSrvcSpec.js',
+          '../test/unit/services/mappingSrvcSpec.js'
       ],
 
 
