@@ -263,11 +263,11 @@ module.exports = function(grunt) {
 		},
 
 		karma: {
-			options: {
-				// point all tasks to karma config file
-				configFile: 'test/karma.conf.js'
-			},
 			unit: {
+				options: {
+					// point all tasks to karma config file
+					configFile: 'test/karma.conf.js'
+				},
 				// run tests once instead of continuously
 				singleRun: false
 			}
@@ -276,7 +276,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('debug', ['clean:debug', 'less:debug', 'copy:debug']);
 	grunt.registerTask('release', ['clean:release', 'less:release', 'ngAnnotate', 'copy:release', 'uglify:release', 'cssmin:release', 'concat', 'htmlmin:release']);
-	grunt.registerTask('test', ['karma']);
+	grunt.registerTask('test', ['debug', 'karma:unit']);
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-ng-annotate');
