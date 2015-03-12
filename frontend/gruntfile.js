@@ -64,7 +64,8 @@ module.exports = function(grunt) {
 							'angular-route/angular-route.js',
 							'bootstrap/js/transition.js',
 							'bootstrap/js/collapse.js',
-							'jquery/dist/jquery.js'
+							'jquery/dist/jquery.js',
+							'modernizr/modernizr.js'
 						],
 						dest: 'bin/debug/js/libs',
 						flatten: true,
@@ -140,7 +141,8 @@ module.exports = function(grunt) {
 							'angular-route/angular-route.min.js',
 							'bootstrap/js/transition.js',
 							'bootstrap/js/collapse.js',
-							'jquery/dist/jquery.min.js'
+							'jquery/dist/jquery.min.js',
+							'modernizr/modernizr.js'
 						],
 						dest: 'bin/app_build/js/libs',
 						flatten: true,
@@ -208,6 +210,7 @@ module.exports = function(grunt) {
 		    libs:{
 		        src: [
                     'bin/app_build/js/libs/jquery.min.js',
+					'bin/app_build/js/libs/modernizr.min.js',
                     'bin/app_build/js/libs/bootstrap.min.js',
                     'bin/app_build/js/libs/angular.min.js',
                     'bin/app_build/js/libs/angular-route.min.js',

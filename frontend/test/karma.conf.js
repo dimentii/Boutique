@@ -15,6 +15,7 @@ module.exports = function(config) {
       // list of files / patterns to load in the browser
       files: [
           'js/libs/jquery.js',
+          'js/libs/modernizr.js',
           'js/libs/transition.js',
           'js/libs/collapse.js',
           'js/libs/angular.js',
@@ -36,6 +37,8 @@ module.exports = function(config) {
           'js/familylookCtrl.js',
           'js/sizeplusCtrl.js',
           'js/navbarDirective.js',
+          'js/scrollingDirective.js',
+          'js/sectionDirective.js',
 
           'html/navbar.html',
 
@@ -52,7 +55,9 @@ module.exports = function(config) {
           '../../test/unit/services/navigatorSrvcSpec.js',
           '../../test/unit/services/mappingSrvcSpec.js',
 
-          '../../test/unit/directives/navbarDirectiveSpec.js'
+          '../../test/unit/directives/navbarDirectiveSpec.js',
+          '../../test/unit/directives/scrollingDirectiveSpec.js',
+          '../../test/unit/directives/sectionDirectiveSpec.js'
       ],
 
 
