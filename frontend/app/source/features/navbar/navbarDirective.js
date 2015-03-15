@@ -4,8 +4,6 @@ angular.module('boutique').directive('ngNavbar', ['navigation', 'location', func
     return {
         restrict: 'A',
         templateUrl: 'html/navbar.html',
-        /* Use this when publish to IIS */ 
-        //templateUrl: '/Production/Application/Common/Navigation/navbar.html',
         controller: ['$scope', function ($scope) {
             $scope.brand = {
                 name: 'Brand',
@@ -20,6 +18,11 @@ angular.module('boutique').directive('ngNavbar', ['navigation', 'location', func
             $scope.services = {
                 name: 'Services',
                 link: location.defaultSlidesUrl
+            };
+
+            $scope.request = {
+                name: 'Request',
+                link: location.requestUrl
             };
 
             $scope.navigate = function (link) {

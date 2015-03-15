@@ -1,12 +1,12 @@
 'use strict';
 
-describe('SectionDirective', function() {
+describe('SlideDirective', function() {
     var el, scope;
 
     beforeEach(module('boutique'));
 
     beforeEach(inject(function($rootScope, $controller, $compile){
-        el = angular.element('<div ng-section></div>');
+        el = angular.element('<div ng-slide></div>');
         $compile(el)($rootScope);
         $rootScope.$digest();
 
@@ -21,19 +21,23 @@ describe('SectionDirective', function() {
         expect(el.attr('ng-swipe-down')).toBe('swipeDown()');
     });
 
+    it('should contain ng-swipe-left attribute', function() {
+        expect(el.attr('ng-swipe-left')).toBe('swipeLeft()');
+    });
+
+    it('should contain ng-swipe-right attribute', function() {
+        expect(el.attr('ng-swipe-right')).toBe('swipeRight()');
+    });
+
     it('should contain scroll attribute', function() {
         expect(el.attr('ng-scroll')).toBe('scroll(direction)');
     });
 
-    it('should contain swipeUp method', function() {
+    it('should contain swipeLeft method', function() {
         expect(scope.swipeUp).toBeDefined();
     });
 
-    it('should contain swipeDown method', function() {
+    it('should contain swipeRight method', function() {
         expect(scope.swipeDown).toBeDefined();
-    });
-
-    it('should contain scroll method', function() {
-        expect(scope.scroll).toBeDefined();
     });
 });

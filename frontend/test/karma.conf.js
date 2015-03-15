@@ -39,6 +39,7 @@ module.exports = function(config) {
           'js/navbarDirective.js',
           'js/scrollingDirective.js',
           'js/sectionDirective.js',
+          'js/slideDirective.js',
 
           'html/navbar.html',
 
@@ -57,7 +58,8 @@ module.exports = function(config) {
 
           '../../test/unit/directives/navbarDirectiveSpec.js',
           '../../test/unit/directives/scrollingDirectiveSpec.js',
-          '../../test/unit/directives/sectionDirectiveSpec.js'
+          '../../test/unit/directives/sectionDirectiveSpec.js',
+          '../../test/unit/directives/slideDirectiveSpec.js'
       ],
 
 

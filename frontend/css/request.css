@@ -1,0 +1,29 @@
+.request-bg {
+    background-image: url("../images/backgrounds/request.jpg");
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+.information {
+    height: 400px;
+    width: 400px;
+    float: left;
+    top: 400px;
+    left: 10%;
+    position: absolute;
+}
+
+    .information input,
+    .information textarea {
+        width: 100%;
+    }
+
+.dropzone {
+    height: 400px;
+    width: 400px;
+    float: right;
+    top: 400px;
+    right: 10%;
+    position: absolute;
+}

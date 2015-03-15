@@ -1,0 +1,14 @@
+<div class="request-bg" ng-section>
+    <form name="details">
+        <div class="information">
+            <input type="text" required placeholder="Name" ng-model="data.name" />
+            <input type="text" required placeholder="E-mail" ng-model="data.email" />
+            <input type="text" required placeholder="Phone" ng-model="data.phone" />
+            <textarea required placeholder="Comments" ng-model="data.comments"/>
+            <input type="submit" ng-click="send(data, details)" />
+        </div>
+        <div class="dropzone">
+            <input type="file" ng-model="files" />
+        </div>
+    </form>
+</div>

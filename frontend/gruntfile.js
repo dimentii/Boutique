@@ -241,7 +241,8 @@ module.exports = function(grunt) {
 					'bin/app_build/css/familylook.min.css',
 					'bin/app_build/css/main.min.css',
 					'bin/app_build/css/media.min.css',
-					'bin/app_build/css/sizeplus.min.css'
+					'bin/app_build/css/sizeplus.min.css',
+					'bin/app_build/css/request.min.css'
 		        ],
                 dest: 'bin/release/css/styles.css'
 		    }
@@ -260,6 +261,7 @@ module.exports = function(grunt) {
 					'bin/release/html/dress.html': 'app/source/views/services/dress.html',
 					'bin/release/html/familylook.html': 'app/source/views/services/familylook.html',
 					'bin/release/html/sizeplus.html': 'app/source/views/services/sizeplus.html',
+					'bin/release/html/request.html': 'app/source/views/request/request.html',
 					'bin/release/index.html': 'app/source/index_release.html'
 				}
 			}
