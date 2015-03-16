@@ -5,6 +5,12 @@
     background-size: cover;
 }
 
+
+.request-bg .ng-dirty.ng-invalid {
+    background-color: #ffc6cb;
+}
+
+
 .information {
     height: 400px;
     width: 400px;
