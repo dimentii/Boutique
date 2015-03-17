@@ -8,12 +8,33 @@ angular.module('boutiqueControllers').controller('RequestController', ['$scope',
 
         };
 
-        angular.element('input[type="file"]').on('change', function(event) {
-            if(event.target.files.length > 0){
-                for(var count = 0; count < event.target.files.length; count ++){
-                    $scope.files.push(event.target.files[count]);
-                }
+        var element = angular.element('.dropzone');
+
+        function cancel(event){
+            if(event.preventDefault){
+                event.preventDefault();
             }
-        })
+            return false;
+        }
+
+        if(!!FileReader && Modernizr.draganddrop) {
+            element.on('dragover', cancel);
+            element.on('dragenter', cancel);
+            element.on('drop', function(event){
+                event = event || window.event;
+
+                if(event.preventDefault){
+                    event.preventDefault();
+                }
+
+                var data = event.originalEvent.dataTransfer;
+
+                var files = data.files;
+
+                $scope.files = files;
+
+                return false;
+            })
+        }
     }
 ]);

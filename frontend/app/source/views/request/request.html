@@ -3,12 +3,12 @@
         <div class="information">
             <input type="text" required placeholder="Name" ng-model="data.name" />
             <input type="email" required placeholder="E-mail" ng-model="data.email" />
-            <input type="text" required placeholder="Phone" ng-model="data.phone" ng-pattern="/^\+1-?\d{3}[- ]?\d{3}[- ]?\d{4}$/" />
+            <input type="text" required placeholder="Phone" ng-model="data.phone" />
             <textarea required placeholder="Comments" ng-model="data.comments"/>
             <input type="submit" ng-disabled="details.$invalid" ng-click="send(data, details)" />
         </div>
         <div class="dropzone">
-            <input type="file" ng-model="files" />
+            <!--<input type="file" ng-model="files" />-->
         </div>
     </form>
 </div>
