@@ -1,0 +1,10 @@
+<form name="details">
+    <div class="information">
+        <input type="text" required placeholder="Name" ng-model="data.name" />
+        <input type="email" required placeholder="E-mail" ng-model="data.email" />
+        <input type="text" required placeholder="Phone" ng-model="data.phone" />
+        <textarea required placeholder="Comments" ng-model="data.comments"></textarea>
+        <input type="submit" ng-disabled="details.$invalid" ng-click="send(data, details)" value="Send" />
+    </div>
+    <div ng-dropzone files="files"></div>
+</form>

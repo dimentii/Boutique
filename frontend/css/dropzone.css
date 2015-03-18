@@ -1,0 +1,29 @@
+.dropzone {
+    height: 400px;
+    width: 400px;
+    float: right;
+    top: 400px;
+    right: 10%;
+    position: absolute;
+    border: 1px solid #ffffff;
+}
+
+.dropzone input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dropzone img {
+    width: 60px;
+    height: 80px;
+}
+
+.btn-remove {
+    width: 20px;
+    height: 20px;
+    background-color: #f5f5ff;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+}

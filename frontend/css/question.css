@@ -1,0 +1,6 @@
+.question-bg {
+    background-image: url("../images/backgrounds/request.jpg");
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+}

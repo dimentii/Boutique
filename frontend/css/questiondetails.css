@@ -1,0 +1,26 @@
+.information {
+    height: 400px;
+    width: 400px;
+    float: left;
+    top: 400px;
+    left: 10%;
+    position: absolute;
+}
+
+.information input,
+.information textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.information textarea {
+    -moz-resize: none;
+    -ms-resize: none;
+    -o-resize: none;
+    resize: none;
+}
+
+.information .ng-dirty.ng-invalid {
+    background-color: #ffc6cb;
+}

@@ -7,7 +7,7 @@ angular.module('boutiqueServices').factory('location', [
         var familylookUrl = '/Index/Services/Familylook';
         var dressUrl = '/Index/Services/Dress';
         var sizeplusUrl = '/Index/Services/Sizeplus';
-        var requestUrl = '/Index/Request';
+        var requestUrl = '/Index/Question';
 
         var defaultSlidesUrl = familylookUrl;
 

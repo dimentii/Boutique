@@ -35,9 +35,9 @@ angular.module('boutique').config(['$routeProvider', '$locationProvider',
                 templateUrl: 'html/dress.html',
                 controller: 'DressController'
             })
-            .when('/Index/Request', {
-                templateUrl: 'html/request.html',
-                controller: 'RequestController'
+            .when('/Index/Question', {
+                templateUrl: 'html/question.html',
+                controller: 'QuestionController'
             })
             .otherwise({
                 redirectTo: '/Index/Brand'
