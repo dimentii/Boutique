@@ -8,21 +8,6 @@ angular.module('boutique').directive('ngDropzone', [function () {
             files: '='
         },
         link: function link(scope, element) {
-            var input = element.find('input[type="file"]');
-
-            input.bind('change', function(event) {
-                event = event || window.event;
-                var files = event.originalEvent.target.files;
-
-                for(var i = 0; i < files.length; i++) {
-                    var file = files[i];
-
-                    readFileData(file);
-                }
-
-                input.replaceWith(input = input.clone(true));
-            });
-
             function cancel(event){
                 if(event.preventDefault){
                     event.preventDefault();
@@ -30,76 +15,76 @@ angular.module('boutique').directive('ngDropzone', [function () {
                 return false;
             }
 
-            function readFileData(file) {
+            function drop(event) {
+                cancel(event);
+
+                var data = event.originalEvent.dataTransfer;
+
+                var files = data.files;
+
+                for(var i = 0; i < files.length; i++) {
+                    readFile(files[i]);
+                }
+            }
+
+            function readFile(file) {
+                if(duplicate(file.name)) {
+                    // todo[dd]: handle this
+                    console.log('already exists in collection');
+                    return;
+                }
+
                 var reader = new FileReader();
 
                 $(reader).on('loadend', function() {
-                    buildPreview.apply(this, [file]);
+                    scope.files.push({file: file, src: this.result});
+                    scope.$digest();
                 });
 
                 reader.readAsDataURL(file);
             }
 
-            function buildPreview(file) {
-                if(checkForDuplicates(file.name)) {
-                    console.log('already exists in collection');
-                    return;
+            function duplicate(fileName) {
+                for(var i = 0; i < scope.files.length; i++) {
+                    if(scope.files[i].file.name === fileName){
+                        return true;
+                    }
                 }
-                scope.files.push({name: file.name, src: this.result});
-                scope.$digest();
+
+                return false;
             }
 
-            function checkForDuplicates(fileName) {
-                var exist = false;
-                $.each(scope.files, function(index, el){
-                    if(el.name === fileName){
-                        exist = true;
-                        return false;
-                    }
-                });
-                return exist;
-            }
+            var input = element.find('input[type="file"]').on('change', function(event) {
+                var files = event.originalEvent.target.files;
+
+                for(var i = 0; i < files.length; i++) {
+                    readFile(files[i]);
+                }
+
+                input.replaceWith(input = input.clone(true));
+            });
 
             if(!!FileReader && Modernizr.draganddrop) {
                 element.on('dragover', cancel);
                 element.on('dragenter', cancel);
                 element.on('drop', function(event) {
-                    event = event || window.event;
-
-                    if(event.preventDefault) {
-                        event.preventDefault();
-                    }
-
-                    var data = event.originalEvent.dataTransfer;
-
-                    var files = data.files;
-
-                    for(var i = 0; i < files.length; i++) {
-                        var file = files[i];
-
-                        readFileData(file);
-                    }
+                    drop(event);
 
                     return false;
-                })
+                });
             }
             else {
-                // todo[dd]: what to do there?
+                // todo[dd]: what to do here?
             }
         },
         controller: ['$scope', function($scope) {
             $scope.remove = function(name) {
-                var index = -1;
                 for(var i = 0; i < $scope.files.length; i++){
-                    if($scope.files[i].name === name) {
-                        index = i;
-                        break;
+                    if($scope.files[i].file.name === name) {
+                        $scope.files.splice(i, 1);
+                        return;
                     }
                 }
-                if(index < 0) {
-                    return;
-                }
-                $scope.files.splice(index, 1);
             }
         }]
     }

@@ -12,7 +12,7 @@ namespace Web.Infrastructure
 
         public override String GetLocalFileName(HttpContentHeaders headers)
         {
-            var name = !string.IsNullOrWhiteSpace(headers.ContentDisposition.FileName) ? headers.ContentDisposition.FileName : "NoName";
+            var name = !String.IsNullOrWhiteSpace(headers.ContentDisposition.FileName) ? headers.ContentDisposition.FileName : "NoName";
             return name.Replace("\"", String.Empty); //this is here because Chrome submits files in quotation marks which get treated as part of the filename and get escaped
         }
     }
