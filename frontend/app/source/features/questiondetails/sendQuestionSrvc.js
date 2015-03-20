@@ -12,7 +12,10 @@ angular.module('boutiqueServices').factory('sendQuestion', ['$http', '$q',
                 headers: {'Content-Type': undefined},
                 transformRequest: function (data) {
                     var formData = new FormData();
-                    formData.append("model", angular.toJson(data.model));
+                    formData.append("name", data.model.name);
+                    formData.append("email", data.model.email);
+                    formData.append("phone", data.model.phone);
+                    formData.append("comments", data.model.comments);
 
                     for (var i = 0; i < data.files.length; i++) {
                         formData.append("file" + i, data.files[i].file);

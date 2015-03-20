@@ -12,7 +12,16 @@ angular.module('boutique').directive('ngQuestionDetails', ['sendQuestion', funct
                     return;
                 }
 
-                sendQuestion.send(data, $scope.files);
+                sendQuestion.send(data, $scope.files).then(
+                    function(data, status){
+                        console.log(status);
+                        console.log(data);
+                    },
+                    function(data, status){
+                        console.log(status);
+                        console.log(data);
+                    }
+                );
             };
         }]
     }

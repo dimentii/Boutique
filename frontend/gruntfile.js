@@ -244,6 +244,7 @@ module.exports = function(grunt) {
 					'bin/app_build/css/sizeplus.min.css',
 					'bin/app_build/css/question.min.css',
 					'bin/app_build/css/questiondetails.min.css',
+					'bin/app_build/css/questionhelp.min.css',
 					'bin/app_build/css/dropzone.min.css'
 		        ],
                 dest: 'bin/release/css/styles.css'
@@ -265,6 +266,7 @@ module.exports = function(grunt) {
 					'bin/release/html/sizeplus.html': 'app/source/views/services/sizeplus.html',
 					'bin/release/html/question.html': 'app/source/views/question/question.html',
 					'bin/release/html/questiondetails.html': 'app/source/features/questiondetails/questiondetails.html',
+					'bin/release/html/questionhelp.html': 'app/source/features/questionhelp/questionhelp.html',
 					'bin/release/html/dropzone.html': 'app/source/features/questiondetails/dropzone.html',
 					'bin/release/index.html': 'app/source/index_release.html'
 				}

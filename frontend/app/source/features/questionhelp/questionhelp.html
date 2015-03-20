@@ -1,0 +1,20 @@
+<div ng-show="show">
+    <div class="fog"></div>
+    <div class="help">
+        <span class="close-help" ng-click="close()">{{closeButton}}</span>
+        <h1>{{header}}</h1>
+        <ul>
+            <li ng-repeat="usage in usages">{{usage}}</li>
+        </ul>
+        <div>
+            <ul>
+                <li ng-repeat="step in steps">
+                    <div ng-class="step.class">
+                        <p>{{step.order}}</p>
+                        <span>{{step.description}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
