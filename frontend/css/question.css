@@ -4,3 +4,7 @@
     -ms-background-size: cover;
     background-size: cover;
 }
+
+.question-bg ul {
+    list-style-type: none;
+}

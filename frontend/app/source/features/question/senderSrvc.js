@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boutiqueServices').factory('sendQuestion', ['$http', '$q',
+angular.module('boutiqueServices').factory('sender', ['$http', '$q',
     function($http, $q) {
 
         function send(data, files) {

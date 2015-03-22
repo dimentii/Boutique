@@ -1,10 +1,16 @@
-.information {
+form[name=details] > div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+}
+
+form[name=details] > div > div {
     height: 400px;
     width: 400px;
-    float: left;
-    top: 400px;
-    left: 10%;
-    position: absolute;
+    margin: auto;
 }
 
 .information input,
@@ -19,6 +25,9 @@
     -ms-resize: none;
     -o-resize: none;
     resize: none;
+    height: 100px;
+    overflow: auto;
+    outline: none;
 }
 
 .information .ng-dirty.ng-invalid {

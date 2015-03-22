@@ -1,17 +1,17 @@
 'use strict';
 
-angular.module('boutique').directive('ngQuestionHelp', [function() {
+angular.module('boutique').directive('ngHelp', [function() {
     return {
         restrict: 'A',
-        templateUrl: 'html/questionhelp.html',
+        templateUrl: 'html/help.html',
         controller: ['$scope', function($scope) {
             $scope.closeButton = "×";
             $scope.header = "Please use this form to:";
 
             $scope.usages = [
-                "- ask your question;",
-                "- send me pictures with your ideas;",
-                "- know time and price of sewing your order."
+                "- ask your question",
+                "- send me pictures with your ideas",
+                "- know time and price of sewing your order"
             ];
 
             $scope.steps = [

@@ -1,10 +1,48 @@
-﻿@media only screen and (min-width: 768px) {
+﻿@media only screen and (max-width: 767px) {
     .about-bg {
         background-image: url("../images/backgrounds/about.jpg");
     }
 
     .brand-bg {
         background-image: url("../images/backgrounds/brand.jpg");
+    }
+
+    .first {
+        top: 50px;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+    }
+
+    .second {
+        top: 50%;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .about-bg {
+        background-image: url("../images/backgrounds/about.jpg");
+    }
+
+    .brand-bg {
+        background-image: url("../images/backgrounds/brand.jpg");
+    }
+
+    .first {
+        top: 50px;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+    }
+
+    .second {
+        top: 50%;
+        bottom: 50px;
+        left: 0;
+        right: 0;
     }
 }
 
@@ -16,6 +54,20 @@
     .brand-bg {
         background-image: url("../images/backgrounds/brand.jpg");
     }
+
+    .first {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+    }
+
+    .second {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -26,6 +78,20 @@
     .brand-bg {
         background-image: url("../images/backgrounds/brand.jpg");
     }
+
+    .first {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+    }
+
+    .second {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+    }
 }
 
 @media only screen and (min-width : 1824px) {
@@ -35,5 +101,19 @@
 
     .brand-bg {
         background-image: url("../images/backgrounds/brand.jpg");
+    }
+
+    .first {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+    }
+
+    .second {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
     }
 }

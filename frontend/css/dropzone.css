@@ -1,27 +1,17 @@
 .dropzone {
-    height: 400px;
-    width: 400px;
-    float: right;
-    top: 400px;
-    right: 10%;
-    position: absolute;
     border: 1px solid #ffffff;
 }
 
 .dropzone input {
     opacity: 0;
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 400px;
     position: absolute;
 }
 
 .dropzone img {
     width: 60px;
     height: 80px;
-}
-
-.dropzone ul {
-    list-style-type: none;
 }
 
 .btn-remove {

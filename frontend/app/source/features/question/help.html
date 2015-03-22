@@ -1,4 +1,4 @@
-<div ng-show="show">
+<div ng-show="show" class="flex">
     <div class="fog"></div>
     <div class="help">
         <span class="close-help" ng-click="close()">{{closeButton}}</span>
@@ -7,9 +7,9 @@
             <li ng-repeat="usage in usages">{{usage}}</li>
         </ul>
         <div>
-            <ul>
+            <ul class="steps">
                 <li ng-repeat="step in steps">
-                    <div ng-class="step.class">
+                    <div ng-class="step.class" class="step">
                         <p>{{step.order}}</p>
                         <span>{{step.description}}</span>
                     </div>
