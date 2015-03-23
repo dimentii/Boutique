@@ -8,15 +8,11 @@ form[name=details] > div {
 }
 
 form[name=details] > div > div {
-    height: 400px;
-    width: 400px;
     margin: auto;
 }
 
 .information input,
 .information textarea {
-    padding: 10px;
-    margin: 10px 0;
     width: 100%;
 }
 
@@ -25,7 +21,6 @@ form[name=details] > div > div {
     -ms-resize: none;
     -o-resize: none;
     resize: none;
-    height: 100px;
     overflow: auto;
     outline: none;
 }
