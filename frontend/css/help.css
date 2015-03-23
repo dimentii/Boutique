@@ -25,19 +25,20 @@
     position: relative;
     margin: auto;
     padding: 10px 40px;
-    width: 640px;
-    height: 400px;
     border: 2px solid rgba(0, 0, 0, 0.5);
     color: #000000;
     background: #ffffff;
     z-index: 2;
 }
 
+.help > ul {
+    padding-left: 5%;
+}
+
 .close-help {
     position: absolute;
     right: 10px;
     top: -5px;
-    font-size: 2em;
     color: #b5b5b5;
     cursor: pointer;
 }
@@ -60,7 +61,7 @@
 .step p {
     font-size: 8em;
     padding: 0;
-    margin: -30px 0;
+    margin: 0;
 }
 
 .red {

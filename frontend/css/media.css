@@ -1,4 +1,4 @@
-﻿@media only screen and (max-width: 767px) {
+﻿@media only screen and (max-width: 767px) and (orientation:portrait) {
     .about-bg {
         background-image: url("../images/backgrounds/about.jpg");
     }
@@ -19,6 +19,90 @@
         bottom: 50px;
         left: 0;
         right: 0;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 8px;
+    }
+
+    .help {
+        width: 300px;
+    }
+
+    .close-help {
+        font-size: 5em;
+    }
+
+    .information,
+    .dropzone,
+    .dropzone input {
+        height: 200px;
+        width: 200px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 5px;
+        margin: 5px 0;
+    }
+
+    .information textarea {
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation:landscape) {
+    .about-bg {
+        background-image: url("../images/backgrounds/about.jpg");
+    }
+
+    .brand-bg {
+        background-image: url("../images/backgrounds/brand.jpg");
+    }
+
+    .first {
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+    }
+
+    .second {
+        top: 50px;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+    }
+
+    .help {
+        width: 300px;
+    }
+
+    .close-help {
+        font-size: 5em;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 8px;
+    }
+
+    .information,
+    .dropzone,
+    .dropzone input {
+        height: 200px;
+        width: 200px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 5px;
+        margin: 5px 0;
+    }
+
+    .information textarea {
+        height: 50px;
     }
 }
 
@@ -44,6 +128,30 @@
         left: 0;
         right: 0;
     }
+
+    .help {
+        width: 600px;
+    }
+
+    .close-help {
+        font-size: 2em;
+    }
+
+    form[name=details] > div > div,
+    .dropzone input {
+        height: 400px;
+        width: 400px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .information textarea {
+        height: 100px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -68,10 +176,34 @@
         left: 50%;
         right: 0;
     }
+
+    .help {
+        width: 600px;
+    }
+
+    .close-help {
+        font-size: 2em;
+    }
+
+    form[name=details] > div > div,
+    .dropzone input {
+        height: 400px;
+        width: 400px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .information textarea {
+        height: 100px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-   .about-bg {
+    .about-bg {
         background-image: url("../images/backgrounds/about.jpg");
     }
 
@@ -91,6 +223,30 @@
         bottom: 0;
         left: 50%;
         right: 0;
+    }
+
+    .help {
+        width: 600px;
+    }
+
+    .close-help {
+        font-size: 2em;
+    }
+
+    form[name=details] > div > div,
+    .dropzone input {
+        height: 400px;
+        width: 400px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .information textarea {
+        height: 100px;
     }
 }
 
@@ -115,5 +271,29 @@
         bottom: 0;
         left: 50%;
         right: 0;
+    }
+
+    .help {
+        width: 600px;
+    }
+
+    .close-help {
+        font-size: 2em;
+    }
+
+    form[name=details] > div > div,
+    .dropzone input {
+        height: 400px;
+        width: 400px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .information textarea {
+        height: 100px;
     }
 }
