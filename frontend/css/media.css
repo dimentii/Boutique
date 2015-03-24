@@ -106,7 +106,7 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation:portrait) {
     .about-bg {
         background-image: url("../images/backgrounds/about.jpg");
     }
@@ -131,6 +131,56 @@
 
     .help {
         width: 600px;
+        height: 440px;
+    }
+
+    .close-help {
+        font-size: 2em;
+    }
+
+    form[name=details] > div > div,
+    .dropzone input {
+        height: 400px;
+        width: 400px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .information textarea {
+        height: 100px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation:landscape) {
+    .about-bg {
+        background-image: url("../images/backgrounds/about.jpg");
+    }
+
+    .brand-bg {
+        background-image: url("../images/backgrounds/brand.jpg");
+    }
+
+    .first {
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+    }
+
+    .second {
+        top: 50px;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+    }
+
+    .help {
+        width: 600px;
+        height: 440px;
     }
 
     .close-help {
@@ -179,6 +229,7 @@
 
     .help {
         width: 600px;
+        height: 440px;
     }
 
     .close-help {
@@ -227,6 +278,7 @@
 
     .help {
         width: 600px;
+        height: 440px;
     }
 
     .close-help {
@@ -275,6 +327,7 @@
 
     .help {
         width: 600px;
+        height: 440px;
     }
 
     .close-help {
