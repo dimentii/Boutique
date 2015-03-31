@@ -246,7 +246,7 @@ module.exports = function(grunt) {
 					'bin/app_build/css/details.min.css',
 					'bin/app_build/css/help.min.css',
 					'bin/app_build/css/dropzone.min.css',
-					'bin/app_build/css/updown.min.css'
+					'bin/app_build/css/navigators.min.css'
 		        ],
                 dest: 'bin/release/css/styles.css'
 		    }
@@ -271,6 +271,8 @@ module.exports = function(grunt) {
 					'bin/release/html/dropzone.html': 'app/source/features/question/dropzone.html',
 					'bin/release/html/up.html': 'app/source/features/navigation/up.html',
 					'bin/release/html/down.html': 'app/source/features/navigation/down.html',
+					'bin/release/html/left.html': 'app/source/features/navigation/left.html',
+					'bin/release/html/right.html': 'app/source/features/navigation/right.html',
 					'bin/release/index.html': 'app/source/index_release.html'
 				}
 			}

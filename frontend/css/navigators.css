@@ -1,4 +1,4 @@
-.navigator {
+.vertical {
     position: absolute;
     left: 50%;
     margin-left: -25px;
@@ -11,19 +11,13 @@
 
     width: 50px;
     height: 50px;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
 }
 
-.navigator:hover {
+.vertical:hover {
     background: rgba(255, 255, 255, 1);
 }
 
-.navigator span {
+.vertical span {
     margin: auto;
     padding-left: 2px;
     font-size: 1.3em;
@@ -40,4 +34,40 @@
 
 .down {
     bottom: 5%;
+}
+
+.horizontal {
+    position: absolute;
+
+    top: 50%;
+    margin-top: -38px;
+
+    width: 76px;
+    height: 76px;
+
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.horizontal:hover {
+    opacity: 1;
+}
+
+.horizontal span {
+    margin: auto;
+    font-size: 4em;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.right {
+    right: 20px;
+}
+
+.left {
+    left: 20px;
 }

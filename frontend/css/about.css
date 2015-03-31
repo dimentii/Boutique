@@ -4,3 +4,17 @@
     -ms-background-size: cover;
     background-size: cover;
 }
+
+.about-bg .center {
+    width: 60%;
+    font-size: 1.6em;
+}
+
+.about {
+    text-align: justify;
+    margin: 0;
+}
+
+.sign {
+    text-align: right;
+}

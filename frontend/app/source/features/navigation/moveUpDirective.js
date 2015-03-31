@@ -3,17 +3,14 @@
 angular.module('boutique').directive('ngMoveUp', [function () {
     return {
         restrict: 'A',
+        require: '^ngSection',
         templateUrl: 'html/up.html',
         link: function (scope, element) {
             element.on('click', function () {
-                scope.swipeDown();
+                scope.$apply(function (s) {
+                    s.swipeDown();
+                });
             });
-        },
-        controller: ['$scope', 'navigation', function($scope, navigation){
-            $scope.down = function() {
-                $scope.swipeDown();
-                /*navigation.swipeDown();*/
-            }
-        }]
+        }
     }
 }]);

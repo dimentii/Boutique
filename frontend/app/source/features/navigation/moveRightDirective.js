@@ -1,13 +1,14 @@
 'use strict';
 
-angular.module('boutique').directive('ngMoveDown', [function () {
+angular.module('boutique').directive('ngMoveRight', [function () {
     return {
         restrict: 'A',
-        templateUrl: 'html/down.html',
+        require: '^ngSlide',
+        templateUrl: 'html/right.html',
         link: function (scope, element) {
             element.on('click', function () {
                 scope.$apply(function (s) {
-                    s.swipeUp();
+                    s.swipeLeft();
                 });
             });
         }

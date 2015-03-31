@@ -1,5 +1,5 @@
 <form name="details">
-    <div class="first">
+    <div class="flex first">
         <div class="information">
             <input type="text" required placeholder="Name" ng-model="data.name" />
             <input type="email" required placeholder="E-mail" ng-model="data.email" />
@@ -8,7 +8,7 @@
             <input type="submit" ng-disabled="details.$invalid" ng-click="send(data, details)" value="Send" />
         </div>
     </div>
-    <div class="second">
+    <div class="flex second">
         <div ng-dropzone files="files" class="dropzone"></div>
     </div>
 </form>

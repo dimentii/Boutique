@@ -2,6 +2,7 @@
 
 angular.module('boutiqueControllers').controller('BrandController', ['$scope',
     function ($scope) {
-        $scope.text = 'brand view';
+        $scope.name = 'Tatiana Scheurer';
+        $scope.slogan = 'Tailoring for You';
     }
 ]);
