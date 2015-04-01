@@ -1,0 +1,30 @@
+﻿.dress-bg {
+    background-image: url("../images/backgrounds/dress.jpg");
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+.sizeplus-bg {
+    background-image: url("../images/backgrounds/sizeplus.jpg");
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+.familylook-bg {
+    background-image: url("../images/backgrounds/familylook.jpg");
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+}
+
+.service-name {
+    font-size: 2em;
+    padding: 20px 50px;
+    position: absolute;
+    bottom: 3%;
+    left: 15%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}

@@ -2,6 +2,6 @@
 
 angular.module('boutiqueControllers').controller('FamilylookController', ['$scope',
     function ($scope) {
-        $scope.text = 'family look view';
+        $scope.name = 'Family Look';
     }
 ]);

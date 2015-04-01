@@ -18,14 +18,18 @@
 
 .close-help {
     position: absolute;
-    right: 10px;
-    top: -5px;
+    right: 15px;
+    top: -1px;
     color: #b5b5b5;
     cursor: pointer;
 }
 
 .close-help:hover {
     color: #000000;
+}
+
+.close-help::before {
+    content: '\02df';
 }
 
 .steps {
@@ -49,10 +53,22 @@
     color: #ff0000;
 }
 
+.one::before {
+    content: '\2460';
+}
+
 .blue {
     color: #0000ff;
 }
 
+.two::before {
+    content: '\2461';
+}
+
 .green {
     color: #00ff00;
+}
+
+.three::before {
+    content: '\2462';
 }

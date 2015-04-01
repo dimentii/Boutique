@@ -1,7 +1,7 @@
 <div ng-show="show" class="flex full">
     <div class="full fog behind"></div>
     <div class="help">
-        <span class="close-help" ng-click="close()">{{closeButton}}</span>
+        <span class="close-help" ng-click="close()"></span>
         <h1>{{header}}</h1>
         <ul>
             <li ng-repeat="usage in usages">{{usage}}</li>
@@ -10,7 +10,7 @@
             <ul class="steps">
                 <li ng-repeat="step in steps">
                     <div ng-class="step.class" class="step">
-                        <p>{{step.order}}</p>
+                        <p ng-class="step.order"></p>
                         <span>{{step.description}}</span>
                     </div>
                 </li>

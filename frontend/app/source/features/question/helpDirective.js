@@ -5,7 +5,6 @@ angular.module('boutique').directive('ngHelp', [function() {
         restrict: 'A',
         templateUrl: 'html/help.html',
         controller: ['$scope', function($scope) {
-            $scope.closeButton = "×";
             $scope.header = "Please use this form to:";
 
             $scope.usages = [
@@ -15,9 +14,9 @@ angular.module('boutique').directive('ngHelp', [function() {
             ];
 
             $scope.steps = [
-                {class: "red", order: "①", description: "Fill the form"},
-                {class: "blue", order: "②", description: "Add images"},
-                {class: "green", order: "③", description: "Click Send"}
+                {class: "red", order: 'one', description: "Fill the form"},
+                {class: "blue", order: 'two', description: "Add images"},
+                {class: "green", order: 'three', description: "Click Send"}
             ];
 
             $scope.show = true;
