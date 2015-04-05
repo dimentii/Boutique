@@ -8,11 +8,12 @@ angular.module('boutiqueServices').factory('location', [
         var dressUrl = '/Index/Services/Dress';
         var sizeplusUrl = '/Index/Services/Sizeplus';
         var requestUrl = '/Index/Question';
+        var contactsUrl = '/Index/Contacts';
 
         var defaultSlidesUrl = familylookUrl;
 
         var slidesMap = [familylookUrl, dressUrl, sizeplusUrl];
-        var siteMap = [brandUrl, aboutUrl, defaultSlidesUrl, requestUrl];
+        var siteMap = [brandUrl, aboutUrl, defaultSlidesUrl, requestUrl, contactsUrl];
 
         var slidesMapPosition = (function () {
             for (var i = 0; i < slidesMap.length; i++) {
@@ -61,7 +62,8 @@ angular.module('boutiqueServices').factory('location', [
             brandUrl: brandUrl,
             aboutUrl: aboutUrl,
             defaultSlidesUrl: defaultSlidesUrl,
-            requestUrl: requestUrl
+            requestUrl: requestUrl,
+            contactsUrl: contactsUrl
         }
     }
 ]);

@@ -25,6 +25,11 @@ angular.module('boutique').directive('ngNavbar', ['navigation', 'location', func
                 link: location.requestUrl
             };
 
+            $scope.contacts = {
+                name: 'Contacts',
+                link: location.contactsUrl
+            };
+
             $scope.navigate = function (link) {
                 navigation.navigateTo(link);
             };

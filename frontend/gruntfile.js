@@ -238,13 +238,15 @@ module.exports = function(grunt) {
                     'bin/app_build/css/about.min.css',
 					'bin/app_build/css/brand.min.css',
 					'bin/app_build/css/main.min.css',
+					'bin/app_build/css/contacts.min.css',
 					'bin/app_build/css/media.min.css',
 					'bin/app_build/css/services.min.css',
 					'bin/app_build/css/question.min.css',
 					'bin/app_build/css/details.min.css',
 					'bin/app_build/css/help.min.css',
 					'bin/app_build/css/dropzone.min.css',
-					'bin/app_build/css/navigators.min.css'
+					'bin/app_build/css/navigators.min.css',
+					'bin/app_build/css/map.min.css'
 		        ],
                 dest: 'bin/release/css/styles.css'
 		    }
@@ -264,8 +266,10 @@ module.exports = function(grunt) {
 					'bin/release/html/familylook.html': 'app/source/views/services/familylook.html',
 					'bin/release/html/sizeplus.html': 'app/source/views/services/sizeplus.html',
 					'bin/release/html/question.html': 'app/source/views/question/question.html',
+					'bin/release/html/contacts.html': 'app/source/views/contacts/contacts.html',
 					'bin/release/html/details.html': 'app/source/features/question/details.html',
 					'bin/release/html/help.html': 'app/source/features/question/help.html',
+					'bin/release/html/map.html': 'app/source/features/map/map.html',
 					'bin/release/html/dropzone.html': 'app/source/features/question/dropzone.html',
 					'bin/release/html/up.html': 'app/source/features/navigation/up.html',
 					'bin/release/html/down.html': 'app/source/features/navigation/down.html',
