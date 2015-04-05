@@ -6,16 +6,6 @@
 }
 
 .brand {
-    width: 350px;
-    height: 350px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
-}
-
-.brand p {
-    font-size: 2em;
-}
-
-.center {
-    margin: auto;
 }

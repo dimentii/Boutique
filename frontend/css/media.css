@@ -1,24 +1,18 @@
 ﻿@media only screen and (max-width: 767px) and (orientation:portrait) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 150px;
+        height: 150px;
+        font-size: 0.8em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 0.6em;
     }
 
-    .first {
-        top: 50px;
-        bottom: 50%;
-        left: 0;
-        right: 0;
-    }
-
-    .second {
-        top: 50%;
-        bottom: 50px;
-        left: 0;
-        right: 0;
+    .service-name {
+        font-size: 0.8em;
+        padding: 10px 25px;
+        left: 3%;
     }
 
     form[name=details],
@@ -53,26 +47,20 @@
 }
 
 @media only screen and (max-width: 767px) and (orientation:landscape) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 150px;
+        height: 150px;
+        font-size: 0.8em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 0.6em;
     }
 
-    .first {
-        top: 50px;
-        bottom: 0;
-        left: 0;
-        right: 50%;
-    }
-
-    .second {
-        top: 50px;
-        bottom: 0;
-        left: 50%;
-        right: 0;
+    .service-name {
+        font-size: 0.8em;
+        padding: 10px 25px;
+        left: 5%;
     }
 
     .help {
@@ -107,26 +95,20 @@
 }
 
 @media only screen and (min-width: 768px) and (orientation:portrait) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 250px;
+        height: 250px;
+        font-size: 1.4em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 1.4em;
     }
 
-    .first {
-        top: 50px;
-        bottom: 50%;
-        left: 0;
-        right: 0;
-    }
-
-    .second {
-        top: 50%;
-        bottom: 50px;
-        left: 0;
-        right: 0;
+    .service-name {
+        font-size: 1.4em;
+        padding: 15px 33px;
+        left: 10%;
     }
 
     .help {
@@ -138,44 +120,44 @@
         font-size: 3em;
     }
 
-    form[name=details] > div > div,
+    .information,
+    .dropzone,
     .dropzone input {
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
     }
 
     .information input,
     .information textarea {
-        padding: 10px;
-        margin: 10px 0;
+        padding: 7px;
+        margin: 7px 0;
     }
 
     .information textarea {
-        height: 100px;
+        height: 83px;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 0.8em;
     }
 }
 
 @media only screen and (min-width: 768px) and (orientation:landscape) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 250px;
+        height: 250px;
+        font-size: 1.4em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 1.4em;
     }
 
-    .first {
-        top: 50px;
-        bottom: 0;
-        left: 0;
-        right: 50%;
-    }
-
-    .second {
-        top: 50px;
-        bottom: 0;
-        left: 50%;
-        right: 0;
+    .service-name {
+        font-size: 1.4em;
+        padding: 15px 33px;
+        left: 10%;
     }
 
     .help {
@@ -187,44 +169,50 @@
         font-size: 3em;
     }
 
-    form[name=details] > div > div,
+    .information,
+    .dropzone,
     .dropzone input {
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
     }
 
     .information input,
     .information textarea {
-        padding: 10px;
-        margin: 10px 0;
+        padding: 7px;
+        margin: 7px 0;
     }
 
     .information textarea {
-        height: 100px;
+        height: 83px;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 0.8em;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 250px;
+        height: 250px;
+        font-size: 1.4em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 1.6em;
     }
 
-    .first {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 50%;
+    .service-name {
+        font-size: 2em;
+        padding: 20px 50px;
+        left: 9%;
     }
 
-    .second {
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        right: 0;
+    .service-name {
+        font-size: 2em;
+        padding: 20px 50px;
+        left: 15%;
     }
 
     .help {
@@ -236,7 +224,8 @@
         font-size: 3em;
     }
 
-    form[name=details] > div > div,
+    .information,
+    .dropzone,
     .dropzone input {
         height: 400px;
         width: 400px;
@@ -254,26 +243,20 @@
 }
 
 @media only screen and (min-width: 1200px) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 350px;
+        height: 350px;
+        font-size: 2em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 1.6em;
     }
 
-    .first {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 50%;
-    }
-
-    .second {
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        right: 0;
+    .service-name {
+        font-size: 2em;
+        padding: 20px 50px;
+        left: 15%;
     }
 
     .help {
@@ -285,7 +268,8 @@
         font-size: 3em;
     }
 
-    form[name=details] > div > div,
+    .information,
+    .dropzone,
     .dropzone input {
         height: 400px;
         width: 400px;
@@ -303,26 +287,20 @@
 }
 
 @media only screen and (min-width : 1824px) {
-    .about-bg {
-        background-image: url("../images/backgrounds/about.jpg");
+    .brand {
+        width: 350px;
+        height: 350px;
+        font-size: 2em;
     }
 
-    .brand-bg {
-        background-image: url("../images/backgrounds/brand.jpg");
+    .about-bg .center {
+        font-size: 1.6em;
     }
 
-    .first {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 50%;
-    }
-
-    .second {
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        right: 0;
+    .service-name {
+        font-size: 2em;
+        padding: 20px 50px;
+        left: 15%;
     }
 
     .help {
@@ -334,7 +312,8 @@
         font-size: 3em;
     }
 
-    form[name=details] > div > div,
+    .information,
+    .dropzone,
     .dropzone input {
         height: 400px;
         width: 400px;

@@ -104,6 +104,10 @@
     align-items: center;
 }
 
+.center {
+    margin: auto;
+}
+
 .full {
     position: absolute;
     top: 0;
