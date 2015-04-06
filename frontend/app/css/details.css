@@ -1,7 +1,3 @@
-form[name=details] > div {
-    margin: auto;
-}
-
 .information input,
 .information textarea {
     width: 100%;

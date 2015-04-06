@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		            compress: false
 		        },
 		        files: {
-		            "bin/debug/css/bootstrap.css": "css/bootstrap/base.less"
+		            "bin/debug/css/bootstrap.css": "app/css/bootstrap/base.less"
 		        }
 		    },
 			release: {
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 					compress: true
 				},
 				files: {
-					"bin/app_build/css/bootstrap.min.css": "css/bootstrap/base.less"
+					"bin/app_build/css/bootstrap.min.css": "app/css/bootstrap/base.less"
 				}
 			}
 		},
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						src: [
-							'css/*.css',
+							'app/css/*.css',
 							'app/components/normalize.css/normalize.css'
 						],
 						dest: 'bin/debug/css',
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'fonts/',
+						cwd: 'app/fonts/',
 						src: [
 							'**/*.*'
 						],
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'images/',
+						cwd: 'app/images/',
 						src: [
 							'**/*.*'
 						],
@@ -150,7 +150,7 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'fonts/',
+						cwd: 'app/fonts/',
 						src: [
 							'**/*.*'
 						],
@@ -160,7 +160,7 @@ module.exports = function(grunt) {
 					},
 					{
 						expand: true,
-						cwd: 'images/',
+						cwd: 'app/images/',
 						src: [
 							'**/*.*'
 						],
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
 			release: {
 				files: [{
 					expand: true,
-					src: ['css/*.css', 'app/components/normalize.css/normalize.css'],
+					src: ['app/css/*.css', 'app/components/normalize.css/normalize.css'],
 					dest: 'bin/app_build/css',
 					flatten: true,
 					ext: '.min.css'
@@ -239,7 +239,11 @@ module.exports = function(grunt) {
 					'bin/app_build/css/brand.min.css',
 					'bin/app_build/css/main.min.css',
 					'bin/app_build/css/contacts.min.css',
-					'bin/app_build/css/media.min.css',
+					'bin/app_build/css/media-xs.min.css',
+					'bin/app_build/css/media-s.min.css',
+					'bin/app_build/css/media-m.min.css',
+					'bin/app_build/css/media-l.min.css',
+					'bin/app_build/css/media-xl.min.css',
 					'bin/app_build/css/services.min.css',
 					'bin/app_build/css/question.min.css',
 					'bin/app_build/css/details.min.css',

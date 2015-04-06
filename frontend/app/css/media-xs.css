@@ -1,0 +1,150 @@
+@media only screen and (max-width: 767px) and (orientation:portrait) {
+    .vertical {
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+
+    .up {
+        top: 60px;
+    }
+
+    .up > span {
+        padding-bottom: 3px;
+    }
+
+    .down {
+        bottom: 10px;
+    }
+
+    .brand {
+        width: 150px;
+        height: 150px;
+        font-size: 0.8em;
+    }
+
+    .about-bg .center {
+        font-size: 0.6em;
+    }
+
+    .service-name {
+        font-size: 0.8em;
+        padding: 10px 25px;
+        left: 3%;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 0.5em;
+    }
+
+    form[name=details].full {
+        top: 90px;
+        bottom: 40px;
+    }
+
+    .help {
+        width: 300px;
+    }
+
+    .close-help {
+        font-size: 5em;
+    }
+
+    .information,
+    .dropzone,
+    .dropzone input {
+        height: 180px;
+        width: 180px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 4px;
+        margin: 3px 0;
+    }
+
+    .information textarea {
+        height: 50px;
+    }
+
+    .contacts {
+        font-size: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation:landscape) {
+    .vertical {
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+
+    .up {
+        top: 60px;
+    }
+
+    .up > span {
+        padding-bottom: 3px;
+    }
+
+    .down {
+        bottom: 10px;
+    }
+
+    .brand {
+        width: 150px;
+        height: 150px;
+        font-size: 0.8em;
+    }
+
+    .about-bg .center {
+        font-size: 0.6em;
+    }
+
+    .service-name {
+        font-size: 0.8em;
+        padding: 10px 25px;
+        left: 5%;
+    }
+
+    .help {
+        width: 300px;
+    }
+
+    .close-help {
+        font-size: 5em;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 0.5em;
+    }
+
+    form[name=details].full {
+        top: 50px;
+    }
+
+    .information,
+    .dropzone,
+    .dropzone input {
+        height: 180px;
+        width: 180px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 4px;
+        margin: 3px 0;
+    }
+
+    .information textarea {
+        height: 50px;
+    }
+
+    .contacts {
+        font-size: 0.5em;
+    }
+}

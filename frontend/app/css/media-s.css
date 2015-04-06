@@ -1,0 +1,135 @@
+@media only screen and (min-width: 768px) and (orientation:portrait) {
+    .vertical {
+        margin-left: -20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    .up {
+        top: 70px;
+    }
+
+    .down {
+        bottom: 20px;
+    }
+
+    .brand {
+        width: 250px;
+        height: 250px;
+        font-size: 1.4em;
+    }
+
+    .about-bg .center {
+        font-size: 1.2em;
+    }
+
+    .service-name {
+        font-size: 1.4em;
+        padding: 15px 33px;
+        left: 10%;
+    }
+
+    .help {
+        width: 600px;
+        height: 440px;
+    }
+
+    .close-help {
+        font-size: 3em;
+    }
+
+    .information,
+    .dropzone,
+    .dropzone input {
+        height: 300px;
+        width: 300px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 7px;
+        margin: 7px 0;
+    }
+
+    .information textarea {
+        height: 83px;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 0.8em;
+    }
+
+    .contacts {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation:landscape) {
+    .vertical {
+        margin-left: -20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    .up {
+        top: 70px;
+    }
+
+    .down {
+        bottom: 20px;
+    }
+
+    .brand {
+        width: 250px;
+        height: 250px;
+        font-size: 1.4em;
+    }
+
+    .about-bg .center {
+        font-size: 1.2em;
+    }
+
+    .service-name {
+        font-size: 1.4em;
+        padding: 15px 33px;
+        left: 10%;
+    }
+
+    .help {
+        width: 600px;
+        height: 440px;
+    }
+
+    .close-help {
+        font-size: 3em;
+    }
+
+    .information,
+    .dropzone,
+    .dropzone input {
+        height: 300px;
+        width: 300px;
+    }
+
+    .information input,
+    .information textarea {
+        padding: 7px;
+        margin: 7px 0;
+    }
+
+    .information textarea {
+        height: 83px;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 0.8em;
+    }
+
+    .contacts {
+        font-size: 1em;
+    }
+}
