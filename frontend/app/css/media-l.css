@@ -10,8 +10,27 @@
         top: 70px;
     }
 
+    .up > span {
+        padding-bottom: 3px;
+    }
+
     .down {
         bottom: 20px;
+    }
+
+    .horizontal {
+        margin-top: -38px;
+        width: 76px;
+        height: 76px;
+        font-size: 4em;
+    }
+
+    .right {
+        right: 20px;
+    }
+
+    .left {
+        left: 20px;
     }
 
     .brand {
@@ -24,10 +43,13 @@
         font-size: 1.6em;
     }
 
-    .service-name {
+    .service {
         font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .service div {
         padding: 20px 50px;
-        left: 15%;
     }
 
     .help {
