@@ -75,7 +75,7 @@
 
     form[name=details],
     .help {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .btn-remove {
@@ -169,7 +169,7 @@
 
     form[name=details],
     .help {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .btn-remove {

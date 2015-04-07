@@ -250,7 +250,8 @@ module.exports = function(grunt) {
 					'bin/app_build/css/help.min.css',
 					'bin/app_build/css/dropzone.min.css',
 					'bin/app_build/css/navigators.min.css',
-					'bin/app_build/css/map.min.css'
+					'bin/app_build/css/map.min.css',
+					'bin/app_build/css/samples.min.css'
 		        ],
                 dest: 'bin/release/css/styles.css'
 		    }
@@ -271,6 +272,7 @@ module.exports = function(grunt) {
 					'bin/release/html/sizeplus.html': 'app/source/views/services/sizeplus.html',
 					'bin/release/html/question.html': 'app/source/views/question/question.html',
 					'bin/release/html/contacts.html': 'app/source/views/contacts/contacts.html',
+					'bin/release/html/samples.html': 'app/source/views/samples/samples.html',
 					'bin/release/html/details.html': 'app/source/features/question/details.html',
 					'bin/release/html/help.html': 'app/source/features/question/help.html',
 					'bin/release/html/map.html': 'app/source/features/map/map.html',

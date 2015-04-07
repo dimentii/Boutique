@@ -43,6 +43,10 @@ angular.module('boutique').config(['$routeProvider', '$locationProvider',
                 templateUrl: 'html/contacts.html',
                 controller: 'ContactsController'
             })
+            .when('/Index/Samples', {
+                templateUrl: 'html/samples.html',
+                controller: 'SamplesController'
+            })
             .otherwise({
                 redirectTo: '/Index/Brand'
             });

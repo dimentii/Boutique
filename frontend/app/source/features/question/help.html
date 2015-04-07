@@ -3,11 +3,11 @@
     <div class="help">
         <span class="close-help" ng-click="close()"></span>
         <h1>{{header}}</h1>
-        <ul>
+        <ul class="clear-list">
             <li ng-repeat="usage in usages">{{usage}}</li>
         </ul>
         <div>
-            <ul class="steps">
+            <ul class="steps clear-list">
                 <li ng-repeat="step in steps">
                     <div ng-class="step.class" class="step">
                         <p ng-class="step.order"></p>

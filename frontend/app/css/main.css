@@ -127,3 +127,7 @@
 .fog {
     background: rgba(255, 255, 255, 0.7);
 }
+
+.clear-list {
+    list-style-type: none;
+}
