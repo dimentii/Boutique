@@ -73,22 +73,30 @@
     .information,
     .dropzone,
     .dropzone input {
-        height: 180px;
-        width: 180px;
+        height: 200px;
+        width: 200px;
     }
 
     .information input,
     .information textarea {
         padding: 4px;
-        margin: 3px 0;
     }
 
     .information textarea {
-        height: 50px;
+        flex-basis: 50px;
+    }
+
+    .btn-remove {
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        right: -5px;
+        font-size: 2.5em;
+        line-height: 0.5em;
     }
 
     .contacts {
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
 }
 
@@ -166,21 +174,29 @@
     .information,
     .dropzone,
     .dropzone input {
-        height: 180px;
-        width: 180px;
+        height: 200px;
+        width: 200px;
     }
 
     .information input,
     .information textarea {
         padding: 4px;
-        margin: 3px 0;
     }
 
     .information textarea {
-        height: 50px;
+        flex-basis: 50px;
+    }
+
+    .btn-remove {
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        right: -5px;
+        font-size: 2.5em;
+        line-height: 0.5em;
     }
 
     .contacts {
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
 }

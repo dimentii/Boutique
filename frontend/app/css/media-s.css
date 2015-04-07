@@ -67,16 +67,24 @@
     .information input,
     .information textarea {
         padding: 7px;
-        margin: 7px 0;
     }
 
     .information textarea {
-        height: 83px;
+        flex-basis: 80px;
     }
 
     form[name=details],
     .help {
         font-size: 0.8em;
+    }
+
+    .btn-remove {
+        width: 30px;
+        height: 30px;
+        top: -8px;
+        right: -8px;
+        font-size: 2.5em;
+        line-height: 0.5em;
     }
 
     .contacts {
@@ -153,16 +161,24 @@
     .information input,
     .information textarea {
         padding: 7px;
-        margin: 7px 0;
     }
 
     .information textarea {
-        height: 83px;
+        flex-basis: 80px;
     }
 
     form[name=details],
     .help {
         font-size: 0.8em;
+    }
+
+    .btn-remove {
+        width: 30px;
+        height: 30px;
+        top: -8px;
+        right: -8px;
+        font-size: 2.5em;
+        line-height: 0.5em;
     }
 
     .contacts {

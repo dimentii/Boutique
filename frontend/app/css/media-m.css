@@ -67,11 +67,24 @@
     .information input,
     .information textarea {
         padding: 10px;
-        margin: 10px 0;
     }
 
     .information textarea {
-        height: 100px;
+        flex-basis: 100px;
+    }
+
+    form[name=details],
+    .help {
+        font-size: 1em;
+    }
+
+    .btn-remove {
+        width: 40px;
+        height: 40px;
+        top: -10px;
+        right: -10px;
+        font-size: 3em;
+        line-height: 0.4em;
     }
 
     .contacts {

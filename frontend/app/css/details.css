@@ -1,6 +1,7 @@
 .information input,
 .information textarea {
     width: 100%;
+    margin: auto;
 }
 
 .information textarea {
@@ -10,12 +11,17 @@
     resize: none;
     overflow: auto;
     outline: none;
+    display: block;
 }
 
 .information .ng-dirty.ng-invalid {
     background-color: #ffc6cb;
 }
 
-.flex-container {
+.flex-wrap {
     flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
 }

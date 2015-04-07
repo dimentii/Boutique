@@ -1,5 +1,5 @@
 <input type="file" multiple name="files[]"/>
-<ul>
+<ul class="flex flex-wrap">
     <li ng-repeat="file in files" class="preview">
         <img ng-src="{{file.src}}" />
         <span class="btn-remove" ng-click="remove(file.file.name)"></span>
