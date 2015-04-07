@@ -20,8 +20,10 @@
 
 .flex-wrap {
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
 }
 
 .flex-column {
     flex-direction: column;
+    -webkit-flex-direction: column;
 }
