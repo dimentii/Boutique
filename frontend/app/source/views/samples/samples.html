@@ -1,5 +1,10 @@
 <div class="samples-bg">
-    <ul class="flex flex-wrap full-free clear-list samples">
+    <ul class="flex clear clear-list selector">
+        <li class="switch" ng-repeat="selector in selectors">
+            <div  ng-click="toggle(selector.count)">{{selector.count}}</div>
+        </li>
+    </ul>
+    <ul class="flex flex-wrap full-free clear clear-list">
         <li ng-repeat="sample in samples" class="sample center">
             <img ng-src="{{sample.file}}" />
             <p>{{sample.name}}</p>

@@ -10,7 +10,7 @@
     bottom: 10px;
 }
 
-.samples {
+.clear {
     padding: 0;
     margin: 0;
 }
@@ -23,4 +23,16 @@
 .sample img {
     width: 100%;
     height: 100%;
+}
+
+.selector {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    z-index: 2;
+}
+
+.switch {
+    width: 30px;
+    height: 30px;
 }
