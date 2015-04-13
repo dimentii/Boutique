@@ -251,7 +251,13 @@ module.exports = function(grunt) {
 					'bin/app_build/css/dropzone.min.css',
 					'bin/app_build/css/navigators.min.css',
 					'bin/app_build/css/map.min.css',
-					'bin/app_build/css/samples.min.css'
+					'bin/app_build/css/samples.min.css',
+					'bin/app_build/css/media-samples-xl.min.css',
+					'bin/app_build/css/media-samples-l.min.css',
+					'bin/app_build/css/media-samples-m.min.css',
+					'bin/app_build/css/media-samples-s.min.css',
+					'bin/app_build/css/media-samples-xs.min.css',
+					'bin/app_build/css/media-samples-all.min.css'
 		        ],
                 dest: 'bin/release/css/styles.css'
 		    }

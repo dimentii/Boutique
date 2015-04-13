@@ -4,11 +4,16 @@
             <div  ng-click="toggle(selector.count)">{{selector.count}}</div>
         </li>
     </ul>
-    <ul class="flex flex-wrap full-free clear clear-list">
-        <li ng-repeat="sample in samples" class="sample center">
-            <img ng-src="{{sample.file}}" />
-            <p>{{sample.name}}</p>
-            <p>{{sample.description}}</p>
+    <ul class="flex flex-wrap samples clear clear-list" ng-class="number">
+        <li ng-repeat="sample in samplesPartOne" class="flex sample center first">
+            <div class="center">
+                <img ng-src="{{sample.file}}" />
+            </div>
+        </li>
+        <li ng-repeat="sample in samplesPartTwo" class="flex sample center second">
+            <div class="center">
+                <img ng-src="{{sample.file}}" />
+            </div>
         </li>
     </ul>
 </div>

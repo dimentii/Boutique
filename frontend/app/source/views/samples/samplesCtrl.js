@@ -25,6 +25,31 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
                 name: 'Black',
                 description: 'Black rectangle',
                 file: 'images/samples/black.png'
+            },
+            {
+                name: 'Turquoise',
+                description: 'Turquoise rectangle',
+                file: 'images/samples/turquoise.png'
+            },
+            {
+                name: 'Brown',
+                description: 'Brown rectangle',
+                file: 'images/samples/brown.png'
+            },
+            {
+                name: 'Rose',
+                description: 'Rose rectangle',
+                file: 'images/samples/rose.png'
+            },
+            {
+                name: 'Grey',
+                description: 'Grey rectangle',
+                file: 'images/samples/grey.png'
+            },
+            {
+                name: 'Orange',
+                description: 'Orange rectangle',
+                file: 'images/samples/orange.png'
             }
         ];
 
@@ -34,16 +59,33 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
             return samplesData.slice(start, from);
         }
 
-        function getPrevSamples() {
-            var to = from;
-            from -= count;
-            return samplesData.slice(from, to);
-        }
-
         function getSamples(number){
             var start = 0;
             from = number;
             return samplesData.slice(start, from);
+        }
+
+        function getClassNumber(length){
+            switch(length) {
+                case 1:
+                    return 'one';
+                case 2:
+                    return 'two';
+                case 3:
+                    return 'three';
+                case 4:
+                    return 'four';
+                case 5:
+                    return 'five';
+                case 6:
+                    return 'six';
+                case 7:
+                    return 'seven';
+                case 8:
+                    return 'eight';
+                default:
+                    throw new Error('Unsupported number');
+            }
         }
 
         $scope.selectors = [
@@ -58,13 +100,41 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
             {
                 count: 4,
                 class: "four"
+            },
+            {
+                count: 8,
+                class: "eight"
             }
         ];
 
-        $scope.samples = getNextSamples();
+        function createSamplesParts() {
+            var samples = getNextSamples();
+
+            if(samples > 4){
+                $scope.samplesPartOne = samples.slice(0, 4);
+                $scope.samplesPartTwo = samples.slice(4, samples.length);
+            }
+            else{
+                $scope.samplesPartOne = samples;
+            }
+
+            $scope.number = getClassNumber(samples.length);
+        }
+
+        createSamplesParts();
 
         $scope.toggle = function(number){
-            $scope.samples = getSamples(number);
+            var samples = getSamples(number);
+
+            if(samples > 4) {
+                $scope.samplesPartOne = samples.slice(0, 4);
+                $scope.samplesPartTwo = samples.slice(4, samples.length);
+            }
+            else {
+                $scope.samplesPartOne = samples;
+            }
+
+            $scope.number = getClassNumber(samples.length);
         }
     }
 ]);
