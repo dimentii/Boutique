@@ -15,9 +15,8 @@
     margin: 0;
 }
 
-.sample img {
-    width: 100%;
-    height: auto;
+.sample > div {
+    height: 100%;
 }
 
 .selector {
