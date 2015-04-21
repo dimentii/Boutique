@@ -107,15 +107,14 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
             }
         ];
 
+        $scope.samplesPartOne = [];
+        $scope.samplesPartTwo = [];
+
         function createSamplesParts() {
             var samples = getNextSamples();
 
-            if(samples > 4){
-                $scope.samplesPartOne = samples.slice(0, 4);
-                $scope.samplesPartTwo = samples.slice(4, samples.length);
-            }
-            else{
-                $scope.samplesPartOne = samples;
+            for(var i = 0; i < samples.length; i++) {
+                i%2 === 0 ? $scope.samplesPartOne.push(samples[i]) : $scope.samplesPartTwo.push(samples[i]);
             }
 
             $scope.number = getClassNumber(samples.length);
@@ -123,15 +122,14 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
 
         createSamplesParts();
 
-        $scope.toggle = function(number){
+        $scope.toggle = function(number) {
             var samples = getSamples(number);
 
-            if(samples > 4) {
-                $scope.samplesPartOne = samples.slice(0, 4);
-                $scope.samplesPartTwo = samples.slice(4, samples.length);
-            }
-            else {
-                $scope.samplesPartOne = samples;
+            $scope.samplesPartOne = [];
+            $scope.samplesPartTwo = [];
+
+            for(var i = 0; i < samples.length; i++) {
+                i%2 === 0 ? $scope.samplesPartOne.push(samples[i]) : $scope.samplesPartTwo.push(samples[i]);
             }
 
             $scope.number = getClassNumber(samples.length);
