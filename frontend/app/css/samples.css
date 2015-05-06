@@ -10,12 +10,16 @@
     bottom: 0;
 }
 
+.samples ul {
+    padding: 0;
+}
+
 .clear {
     padding: 0;
     margin: 0;
 }
 
-.sample > div {
+.sample > li {
     height: 100%;
 }
 

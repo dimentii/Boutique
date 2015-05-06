@@ -1,29 +1,28 @@
 @media only screen and (min-width : 1824px) {
-    .one .sample img {
+    .one .sample img,
+    .two .sample img {
         width: auto;
         height: 100%;
     }
 
-    .two .first {
-        position: absolute;
+    .two .first,
+    .four .first {
         left: 15px;
         top: 15px;
         right: 50%;
         bottom: 15px;
-        padding-right: 15px;
     }
 
-    .two .second {
-        position: absolute;
+    .two .second,
+    .four .second {
         left: 50%;
         top: 15px;
         right: 15px;
         bottom: 15px;
-        padding-left: 15px;
     }
 
-    .two .sample img {
-        width: auto;
-        height: 100%;
+    .four .sample img {
+        width: 100%;
+        height: auto;
     }
 }

@@ -1,11 +1,11 @@
-@media only screen and (min-width: 768px) and (orientation:portrait) {
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation:portrait) {
     .one .sample img {
         width: 100%;
         height: auto;
     }
 
-    .two .first {
-        position: absolute;
+    .two .first,
+    .four .first {
         left: 5px;
         top: 5px;
         right: 5px;
@@ -13,8 +13,8 @@
         padding-bottom: 5px;
     }
 
-    .two .second {
-        position: absolute;
+    .two .second,
+    .four .second {
         left: 5px;
         top: 50%;
         right: 5px;
@@ -22,37 +22,45 @@
         padding-top: 5px;
     }
 
-    .two .sample img {
+    .two .sample img,
+    .four .sample img {
         width: auto;
         height: 100%;
     }
 }
 
-@media only screen and (min-width: 768px) and (orientation:landscape) {
-    .one .sample img {
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation:landscape) {
+    .one .sample img,
+    .two .sample img {
         width: auto;
         height: 100%;
     }
 
-    .two .first {
-        position: absolute;
+    .two .first,
+    .four .first {
         left: 5px;
         top: 5px;
         right: 50%;
         bottom: 5px;
+    }
+
+    .two .first {
         padding-right: 5px;
     }
 
-    .two .second {
-        position: absolute;
+    .two .second,
+    .four .second {
         left: 50%;
         top: 5px;
         right: 5px;
         bottom: 5px;
+    }
+
+    .two .second {
         padding-left: 5px;
     }
 
-    .two .sample img {
+    .four .sample img {
         width: 100%;
         height: auto;
     }
