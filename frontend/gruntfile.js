@@ -64,6 +64,7 @@ module.exports = function(grunt) {
 							'angular-route/angular-route.js',
 							'bootstrap/js/transition.js',
 							'bootstrap/js/collapse.js',
+							'bootstrap/js/dropdown.js',
 							'jquery/dist/jquery.js',
 							'modernizr/modernizr.js'
 						],
@@ -141,6 +142,7 @@ module.exports = function(grunt) {
 							'angular-route/angular-route.min.js',
 							'bootstrap/js/transition.js',
 							'bootstrap/js/collapse.js',
+							'bootstrap/js/dropdown.js',
 							'jquery/dist/jquery.min.js',
 							'modernizr/modernizr.js'
 						],
@@ -270,6 +272,7 @@ module.exports = function(grunt) {
 					collapseWhitespace: true
 				},
 				files: {
+					'bin/release/html/mode.html': 'app/source/features/navbar/mode.html',
 					'bin/release/html/navbar.html': 'app/source/features/navbar/navbar.html',
 					'bin/release/html/about.html': 'app/source/views/about/about.html',
 					'bin/release/html/brand.html': 'app/source/views/brand/brand.html',

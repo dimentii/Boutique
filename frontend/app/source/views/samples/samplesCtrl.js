@@ -122,8 +122,8 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
 
         createSamplesParts();
 
-        $scope.toggle = function(number) {
-            var samples = getSamples(number);
+        $scope.$on('mode:changed', function(event, args){
+            var samples = getSamples(args.mode);
 
             $scope.samplesPartOne = [];
             $scope.samplesPartTwo = [];
@@ -133,6 +133,6 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
             }
 
             $scope.number = getClassNumber(samples.length);
-        }
+        });
     }
 ]);
