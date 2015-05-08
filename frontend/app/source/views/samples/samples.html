@@ -1,12 +1,12 @@
-<div class="samples-bg">
-    <div class="flex samples clear clear-list" ng-class="number">
+<div class="samples-bg" ng-section ng-swipe-left="next()" ng-swipe-right="previous()">
+    <div class="flex samples clear clear-list" ng-class="mode">
         <ul class="flex sample center first">
-            <li ng-repeat="sample in samplesPartOne" class="center flex">
+            <li ng-repeat="sample in packOne" class="center flex">
                 <img ng-src="{{sample.file}}" class="center" />
             </li>
         </ul>
         <ul class="flex sample center second">
-            <li ng-repeat="sample in samplesPartTwo" class="center flex">
+            <li ng-repeat="sample in packTwo" class="center flex">
                 <img ng-src="{{sample.file}}" class="center" />
             </li>
         </ul>

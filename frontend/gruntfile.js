@@ -213,7 +213,9 @@ module.exports = function(grunt) {
 		        src: [
                     'bin/app_build/js/libs/jquery.min.js',
 					'bin/app_build/js/libs/modernizr.min.js',
-                    'bin/app_build/js/libs/bootstrap.min.js',
+                    'bin/app_build/js/libs/collapse.min.js',
+                    'bin/app_build/js/libs/transition.min.js',
+                    'bin/app_build/js/libs/dropdown.min.js',
                     'bin/app_build/js/libs/angular.min.js',
                     'bin/app_build/js/libs/angular-route.min.js',
                     'bin/app_build/js/libs/angular-animate.min.js'

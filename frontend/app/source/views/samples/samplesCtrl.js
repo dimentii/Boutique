@@ -1,71 +1,16 @@
 'use strict';
 
-angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
-    function ($scope) {
+angular.module('boutiqueControllers').controller('SamplesController', ['$scope', 'loader',
+    function ($scope, loader) {
         var count = 1,
             from = 0;
 
-        var samplesData = [
-            {
-                name: 'Red',
-                description: 'Red rectangle',
-                file: 'images/samples/red.png'
-            },
-            {
-                name: 'Green',
-                description: 'Green rectangle',
-                file: 'images/samples/green.png'
-            },
-            {
-                name: 'Blue',
-                description: 'Blue rectangle',
-                file: 'images/samples/blue.png'
-            },
-            {
-                name: 'Black',
-                description: 'Black rectangle',
-                file: 'images/samples/black.png'
-            },
-            {
-                name: 'Turquoise',
-                description: 'Turquoise rectangle',
-                file: 'images/samples/turquoise.png'
-            },
-            {
-                name: 'Brown',
-                description: 'Brown rectangle',
-                file: 'images/samples/brown.png'
-            },
-            {
-                name: 'Rose',
-                description: 'Rose rectangle',
-                file: 'images/samples/rose.png'
-            },
-            {
-                name: 'Grey',
-                description: 'Grey rectangle',
-                file: 'images/samples/grey.png'
-            },
-            {
-                name: 'Orange',
-                description: 'Orange rectangle',
-                file: 'images/samples/orange.png'
-            }
-        ];
-
-        function getNextSamples() {
-            var start = from;
-            from += count;
-            return samplesData.slice(start, from);
+        function clean() {
+            $scope.packOne = [];
+            $scope.packTwo = [];
         }
 
-        function getSamples(number){
-            var start = 0;
-            from = number;
-            return samplesData.slice(start, from);
-        }
-
-        function getClassNumber(length){
+        function getMode(length) {
             switch(length) {
                 case 1:
                     return 'one';
@@ -88,51 +33,40 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
             }
         }
 
-        $scope.selectors = [
-            {
-                count: 1,
-                class: "one"
-            },
-            {
-                count: 2,
-                class: "two"
-            },
-            {
-                count: 4,
-                class: "four"
-            },
-            {
-                count: 8,
-                class: "eight"
-            }
-        ];
-
-        $scope.samplesPartOne = [];
-        $scope.samplesPartTwo = [];
-
-        function createSamplesParts() {
-            var samples = getNextSamples();
+        function pack(samples) {
+            clean();
 
             for(var i = 0; i < samples.length; i++) {
-                i%2 === 0 ? $scope.samplesPartOne.push(samples[i]) : $scope.samplesPartTwo.push(samples[i]);
+                i%2 === 0 ? $scope.packOne.push(samples[i]) : $scope.packTwo.push(samples[i]);
             }
 
-            $scope.number = getClassNumber(samples.length);
+            $scope.mode = getMode(samples.length);
         }
 
-        createSamplesParts();
+        $scope.mode = null;
+        $scope.packOne = null;
+        $scope.packTwo = null;
 
-        $scope.$on('mode:changed', function(event, args){
-            var samples = getSamples(args.mode);
+        $scope.next = function() {
+            var start = from;
+            from += count;
+            var samples = loader.get(start, from);
+            pack(samples);
+        };
 
-            $scope.samplesPartOne = [];
-            $scope.samplesPartTwo = [];
+        $scope.previous = function() {
+            var end = from;
+            from -= count;
+            var samples = loader.get(from, end);
+            pack(samples);
+        };
 
-            for(var i = 0; i < samples.length; i++) {
-                i%2 === 0 ? $scope.samplesPartOne.push(samples[i]) : $scope.samplesPartTwo.push(samples[i]);
-            }
-
-            $scope.number = getClassNumber(samples.length);
+        $scope.$on('mode:changed', function(event, args) {
+            from -= count;
+            count = args.mode;
+            $scope.next();
         });
+
+        $scope.next();
     }
 ]);
