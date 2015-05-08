@@ -20,8 +20,15 @@
     position: absolute;
     top: 50%;
     cursor: pointer;
-    color: #ffffff;
     opacity: 0.8;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.grey {
+    color: #777777;
 }
 
 .horizontal:hover {

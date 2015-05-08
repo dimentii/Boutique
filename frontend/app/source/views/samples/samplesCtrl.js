@@ -3,44 +3,22 @@
 angular.module('boutiqueControllers').controller('SamplesController', ['$scope', 'loader',
     function ($scope, loader) {
         var count = 1,
-            from = 0;
-
-        function clean() {
-            $scope.packOne = [];
-            $scope.packTwo = [];
-        }
-
-        function getMode(length) {
-            switch(length) {
-                case 1:
-                    return 'one';
-                case 2:
-                    return 'two';
-                case 3:
-                    return 'three';
-                case 4:
-                    return 'four';
-                case 5:
-                    return 'five';
-                case 6:
-                    return 'six';
-                case 7:
-                    return 'seven';
-                case 8:
-                    return 'eight';
-                default:
-                    throw new Error('Unsupported number');
-            }
-        }
+            current = 0,
+            modes = { 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight' };
 
         function pack(samples) {
-            clean();
+            var length = samples.length,
+                middle = Math.ceil(length/2);
 
-            for(var i = 0; i < samples.length; i++) {
-                i%2 === 0 ? $scope.packOne.push(samples[i]) : $scope.packTwo.push(samples[i]);
-            }
+            $scope.packOne = samples.splice(0, middle);
+            $scope.packTwo = samples;
 
-            $scope.mode = getMode(samples.length);
+            $scope.mode = modes[length];
+        }
+
+        function initialize(from, to) {
+            var samples = loader.get(from, to);
+            pack(samples);
         }
 
         $scope.mode = null;
@@ -48,25 +26,23 @@ angular.module('boutiqueControllers').controller('SamplesController', ['$scope',
         $scope.packTwo = null;
 
         $scope.next = function() {
-            var start = from;
-            from += count;
-            var samples = loader.get(start, from);
-            pack(samples);
+            current += count;
+            var end = current + count;
+            initialize(current, end);
         };
 
         $scope.previous = function() {
-            var end = from;
-            from -= count;
-            var samples = loader.get(from, end);
-            pack(samples);
+            var end = current;
+            current -= count;
+            initialize(current, end);
         };
 
         $scope.$on('mode:changed', function(event, args) {
-            from -= count;
             count = args.mode;
+            current -= count;
             $scope.next();
         });
 
-        $scope.next();
+        initialize(current, count);
     }
 ]);
